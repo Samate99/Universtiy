@@ -7,5 +7,5 @@ int main() {
       i <<= 1;
       a++;
     }
-  printf("Szóhossz: %d bit\n",b);
+  printf("Szóhossz: %d bit\n",a);
 }
