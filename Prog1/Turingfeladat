@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <iostream>
+
+using namspace std;
+int main()
+{
+int a=0
+cout << "írjon be egy számot : "<< '\n';
+ cin >> a ;
+  for (int i =0 ; i<a , i++ ) {
+  cout << "I" ;
+ }
+
+ cout<< '\n';
+
+}
