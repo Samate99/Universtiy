@@ -1,0 +1,31 @@
+A programozási szintek 3 csoportba sorolhatók !  
+Beszélhetünk gépi , assemly és magas szintu nyelvekről.
+Magas szintu nyelv peldaul a C ,C++ ,C# , java stb...
+Az ezen megírt programokat forrásprogramnak nevezzük , Fontos hogy 
+a programunk az adott nyelv nyelvtani szabályainak megfeleljen
+ellenkező esetben a programunk nem fog lefutni. Fontos betartani
+a szintaktikai szabályokat ! 
+A gép nyelv a processzorhoz kotheto .Miden processzor sajat
+gépi nyelvvel rendelkezik . Tehat csak az ő nyelven írt programokat képes
+végrehajtani . Ahoz hogy a mi programunkat kepes legyen ertelezni szükségünk lesz 
+egy fordító programra. A fordító program az egyik olyan program amely 
+ami a mi forráskódunkat átfordítja gépi kóddá . A lefordítás során a program
+szintaktikai és szemantikai hibákat keres . Ha nem talál hibát akkor legenerálja 
+a kódót és a program lefut . Viszont ha bármifele kis hibat is talal akkor
+nem fogja lefordítani a kódot ameddig nem javítjuk ki a hibákat.  
+
+
+Fontos megemlíteni a Karakterkészleteket .Ezeknek a  legkisebb alkotó elemek a karakterek. Ezeket a nyelvek 3 csoportba 
+kategorizálják . Betűk , számok és egyéb karakterek. Beszélhetünk lexikális
+egységekről is . Ezek olyan karaktersorozatok amelyeket a lexikális elemző felsimer
+Beszélhetünk többkarakteres szimbolumokról , olyan karaktersorozatokról
+amiknek csak az eppen adott nyelv tuldajdonít jelentést.Vannak védett szavak
+amelyeknek ugyszintén az adott nyelv tulajdonít jelentést (If , Case , for , while )
+beszélhetünk megjegyzésekről amelyeket nem fordít le a fordító hanem
+a programkód olvasóihoz szólnak , és vannak a literálok amelyek segítéségvel
+fix értékek építhetőek be a programba
+
+A következő fontos csoport az Adattípusok. Minden adattipus mögött van 
+egy belső ábrázolási mód. Két nagy csoportról  beszélhetünk . Az egyszerű adattípusról
+ami tartománya atomi értékét tartalmazza és az összetett adattipusról 
+amelynek elemei is valamilyen típussal rendelkeznek. Beszélhetünk . 
