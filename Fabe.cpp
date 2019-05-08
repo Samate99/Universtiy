@@ -1,4 +1,4 @@
-// z3a7.cpp
+/// z3a7.cpp
 
 //
 
@@ -574,9 +574,9 @@ private:
 
             // 1-el nagyobb mélység, ezért -1
 
-            os << elem->getBetu () << "(" << melyseg - 1 << ")" << std::endl;
+		   kiir ( elem->nullasGyermek (), os);
 
-            kiir ( elem->nullasGyermek (), os);
+            os << elem->getBetu () << "(" << melyseg - 1 << ")" << std::endl;
 
 			kiir ( elem->egyesGyermek (), os);
 
@@ -893,7 +893,9 @@ main ()
     // a példa, azaz ki lehessen tolni az LZWBinFa-t kimeneti csatornára:
 
 
+
     std::cout << binFa; // ehhez kell a globális operator<< túlterhelése, lásd fentebb
+
 
 
     std::cout << "depth = " << binFa.getMelyseg () << std::endl;
@@ -971,6 +973,7 @@ try {
     }
 
 
+
     // "Megjegyezzük" a bemenő fájl nevét
 
     char *inFile = *++argv;
@@ -988,6 +991,7 @@ try {
         return -2;
 
     }
+
 
 
     // ha igen, akkor az 5. előadásból kimásoljuk a fájlkezelés C++ változatát:
@@ -1013,7 +1017,9 @@ try {
    }
 
 
+
     std::fstream kiFile (*++argv, std::ios_base::out);
+
 
 
     unsigned char b;		// ide olvassik majd a bejövő fájl bájtjait
@@ -1021,9 +1027,11 @@ try {
     LZWBinFa binFa;		// s nyomjuk majd be az LZW fa objektumunkba
 
 
+
     // a bemenetet binárisan olvassuk, de a kimenő fájlt már karakteresen írjuk, hogy meg tudjuk
 
     // majd nézni... :) l. az említett 5. ea. C -> C++ gyökkettes átírási példáit
+
 
 
     while (beFile.read ((char *) &b, sizeof (unsigned char)))
@@ -1033,7 +1041,9 @@ try {
             break;
 
 
+
     bool kommentben = false;
+
 
 
     while (beFile.read ((char *) &b, sizeof (unsigned char)))
@@ -1041,11 +1051,13 @@ try {
     {
 
 
+
         if (b == 0x3e)
 
         {			// > karakter
 
             kommentben = true;
+
             continue;
 
         }
@@ -1061,6 +1073,7 @@ try {
             continue;
 
         }
+
 
 
         if (kommentben)
@@ -1106,6 +1119,7 @@ try {
         }
 
 
+
     }
 
 
@@ -1115,9 +1129,11 @@ try {
     // a példa, azaz ki lehessen tolni az LZWBinFa-t kimeneti csatornára:
 
 
+
     kiFile << binFa;		// ehhez kell a globális operator<< túlterhelése, lásd fentebb
 
     // (jó ez az OO, mert mi ugye nem igazán erre gondoltunk, amikor írtuk, mégis megy, hurrá)
+
 
 
     kiFile << "depth = " << binFa.getMelyseg () << std::endl;
@@ -1125,6 +1141,7 @@ try {
     kiFile << "mean = " << binFa.getAtlag () << std::endl;
 
     kiFile << "var = " << binFa.getSzoras () << std::endl;
+
 
 
     kiFile.close ();
