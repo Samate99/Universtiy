@@ -104,7 +104,7 @@
             A program megfelelő hasznalatahoz telepítenünk kell egyéb programokat peldaul a  OpenCV-t illetve a libqt-t
             Ha ezt telepítettük mar csak el kell indítani a programot es elkezdhetjük tesztelni a kepessegeinket es akar statisztikakkal is alatamaszthatjuk a bennünk rejlő potencialt . 
         </para>            
-    </section>   
+     
             <figure>
             <title> BrainB Benchmark : Batfai Norbert </title>
             <mediaobject>
@@ -113,6 +113,7 @@
                 </imageobject>
             </mediaobject>
         </figure>
+        </section> 
     
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 </chapter>                

@@ -478,7 +478,7 @@ compute(nn.exor, exor.data[,1:2])
             A program eleg bonyolult de szerintem mindenki szamara latható hogy korulbelul 3 reszre oszthatjuk a kódot .
             Lathatunk egy részt amelyben ahogy latjuk fogadjuk az adatokat lathatunk egy masodik reszt amely kepes lesz osszegezni az adatokat illetve eltarolni illetve van egy harmadik resz amely kepes donteseket hozni es lathatjuk hogy kepes kezeli az adatokat.
         </para>            
-    </section> 
+
                          <programlisting language="c"><![CDATA[
                          
 // nem sajat kód                         
@@ -505,6 +505,7 @@ double value = (*p) (image);
 
 }
 }]]></programlisting> 
+    </section> 
         
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 </chapter>                
