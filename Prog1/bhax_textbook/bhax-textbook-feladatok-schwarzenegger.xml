@@ -1,0 +1,70 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Schwarzenegger!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+    <section>
+        <title>Szoftmax Py MNIST</title>
+        <para>aa
+            Python
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://github.com/tensorflow/tensorflow/releases/tag/v0.9.0">https://github.com/tensorflow/tensorflow/releases/tag/v0.9.0</link>    
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Ez a program szerintem a konyv egyik legérdekesebb programja mukodéséhez 2 elengedhetetlen dolog telepítésére van szükség egyfelől szükség lesz egy adatbazisra amit
+            a tensorFlowal érhetünk ell illetve egy fejlesztői kornyezetre ami a mi esetünkben a Python lesz . Talan ez az a nyelv amelyel eddigi tanulmanyaim során a legkevesebbet foglalkoztam
+            de szobatársamnak hála szerencsére ezzel is sikerült talalkoznom .  Miutan telepítettük ezt a 2 dolgot kapunk egy adatbazist , Egy adazbazist ami rengeteg képet tartalmaz .Itt tehetjük fel a kérdést hogy mire is fogjuk hasznalni ezt
+            a rengeteg képet. Ezekkel a képekkel fogjuk megtanítani elemezni a programunkat . A program az adatbazisból rengeteg képpel talalkozik , ezzel megtanulja felismerni a kepeket . Rengeteg keppel fogjuk megtanítani 1-1 dologra és tovabbi képekkel fogjuk
+            ellenorizni hogy sikerült e a megfelelő "oktatas" . Ha mindent jól csinaltunk és sikerült a dolog akkor ha az előző képekez hasonló . Tehat ugyanazt a dolgot abrazoló képet fogunk mutatni a programunk szamara
+            a program képes lesz arra hogy felismerje es a megfelelő kategóriahoz sorolja a kepet .
+        </para>
+        
+        <figure>
+            <title> TensorFlow  Forrás:SAP Blogs </title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="pic/tensorflow.png" scale="70"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        
+    </section>        
+
+    <section>
+        <title>Szoftmax R MNIST (Passz)</title>
+        <para>
+            R            
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section>        
+
+    <section>
+        <title>Minecraft-MALMÖT(Passz)</title>
+        <para>
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section>        
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+</chapter>                

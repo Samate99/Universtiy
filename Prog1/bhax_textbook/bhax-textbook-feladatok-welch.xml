@@ -1,0 +1,224 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Welch!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+    <section>
+        <title>Első osztályom</title>
+        <para>
+            Valósítsd meg C++-ban és Java-ban az módosított polártranszformációs algoritmust! A matek háttér 
+            teljesen irreleváns, csak annyiban érdekes, hogy az algoritmus egy számítása során két normálist
+            számol ki, az egyiket elspájzolod és egy további logikai taggal az osztályban jelzed, hogy van vagy
+            nincs eltéve kiszámolt szám.
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:  <link xlink:href=' https://github.com/Samate99/Hello-world/blob/master/Prog1/polargen.java'>  https://github.com/Samate99/Hello-world/blob/master/Prog1/polargen.java</link>              
+        </para>
+        <para>
+            Tehat első ránézésre a polartranszformációs algoritmus talan ilyesztőnek tünhet viszont ha jobban beleolvasunk a programkódban akkor azért  megnyugodhatunk.
+            A polártranszformációval fogunk random számokat generalni amelyeket fel fogunk hasznalni a program kulonboző részein ! 
+            A program több nyelven is megtalalható jelen esetben en egy java nyelven írt kódot mutatok be . 
+            Szóval kezdjuk is el nezni a programunkat szerintem ami egyből feltünik a kódot olvasók szamara hogy rendelkezünk egy PolarGen Classal
+            aminek talan az a specifikus tulajdonsaga hogy 2 reszből all
+            Beszélhetünk egy Privat illetve egy publikus részről is .  De akkor lessük is meg hogy hogyan dolgozik a program .
+            A program megnezi hogy van e tarolt ertek ezutan 2 felé válik a történet ha nem rendelkezünk akkor szamulonk megfelelő mennyiségű értéket .
+            Az egyiket visszaadjuk a programunknak a masikra még később szükségünk lesz emiatt azt eltaroljuk.
+            Tehat utana vegzunk par müveletet es egy ciklus segítéségével kiiratjuk az adott szamu erteket , eredményt .
+            </para>
+            
+ <programlisting language="c"><![CDATA[Program T100            
+import java.util.Random;
+import java.io.*;
+import java.lang.Math;
+public class PolarGen	{
+
+  public final  static int RAND_MAX = 32767;
+  private static boolean bExists;
+  private double dValue;
+  static Random cRandomGenerator = new Random();
+
+    public PolarGen() { 		
+	bExists = false;
+
+	cRandomGenerator.setSeed(20); 	
+  };
+
+
+  public double PolarGet()	{
+    	if (!bExists)
+  {
+		double u1, u2, v1, v2, w;
+		do{
+			u1 = cRandomGenerator.nextInt (RAND_MAX) / (RAND_MAX + 1.0); //innentől jön az algoritmus
+			u2 = cRandomGenerator.nextInt (RAND_MAX) / (RAND_MAX + 1.0);
+			v1 = 2 * u1 - 1;
+			v2 = 2 * u2 - 1;
+			w = v1 * v1 + v2 * v2;
+		    }
+		while (w > 1);
+		double r = Math.sqrt ((-2 * Math.log (w)) / w);
+
+		dValue = r * v2; 
+		bExists = !bExists;
+
+		return r * v1; //idáig tart az algoritmus
+
+	}
+	else
+
+	{
+		bExists = !bExists; //ha van korábbi random érték, akkor azt adja vissza
+		return dValue;
+
+	}
+  };    
+  public static void main(String args[])	{
+    PolarGen cPolarGen = new PolarGen();
+    double  dEredmeny = cPolarGen.PolarGet();
+    System.out.println(dEredmeny);
+
+  }
+}]]></programlisting>    
+    </section>        
+
+    <section>
+        <title>LZW</title>
+        <para>
+            Valósítsd meg C-ben az LZW algoritmus fa-építését!
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href=' https://github.com/Samate99/Hello-world/blob/master/Prog1/lzw.c'> https://github.com/Samate99/Hello-world/blob/master/Prog1/lzw.c</link> 
+        </para>
+        <para>
+            Mi is az a binfa . Eddigi Egyetemi palyafutásom során talán a "legrémisztőbb" dolog . Még a bevprog idején találkoztunk elsőnek hisz a bevprog védés nagyrészében rajta kellett kisebb változtatásokat létrehozni. . 
+            Talan feladata elsőre fel sem tünt de gyarkolatilag ez egy eleg jól mukodő veszteségmentes tomorítési algoritmus . Nagyon meglepodtem mikor kiderült hogy ezt az algoritmust
+            nagyon széles körben hasznaljak szerte az informatika különbőző "ágazataiban" . Maga a binfa Terry Welchhez kothető ő volt aki egy előző úgynevezett LZ78as algoritmus tovabbfejlesztéseként publikalta .
+            Tehat mint fentebb említettem ez egy tomoritesi eljaras amelynek során a kódoló csak a szóbeli idexet kuldi ami egy nagyon ritka és erdekes dolog . Kiemelném hogy ebben az esetben a folyamat dinamikus
+            A binfa megfelelő elkészítéséhez és futatásához érdemes különbőző könytárakta includeolni . A futtatáshoz szükség lesz egy befilera illetve egy kifilera . 
+        </para>
+         
+    </section>        
+        
+    <section>
+        <title>Fabejárás</title>
+        <para>
+            Járd be az előző (inorder bejárású) fát pre- és posztorder is!
+        </para>
+        <para>
+             Megoldás forrása: <link xlink:href=' https://github.com/Samate99/Hello-world/blob/master/Fabe.cpp'> https://github.com/Samate99/Hello-world/blob/master/Fabe.cpp</link> 
+        </para>
+        <para>
+           A binaris fák bejarasaiban alltalaban 3 módót v -in a -pre és a posztordet különböztetünk meg .
+           A 3 mód között igazaból felépítésbeli eltérések talalhatóak Tehat gyakorlatilag a gyökér és ágak elhelyezkedésétől függ hogy éppen milyen módról beszélhetünk.ű
+           Kiemelném hogy a program lefutásában illetve "viselkedésében" lényeges valtozas nem fedezhető fel.
+           Inorder esetben a gyökér középen van az ágai pedig felette illetve alatta Preorder nél a gyökér felül van az ágai alatta postordernél a gyökér alul van ágai pedig felette.              
+        </para>
+        <programlisting language="c"><![CDATA[Program T100            
+
+/inorder 
+void kiir (Csomopont * elem, std::ostream & os) 
+{ if (elem != NULL)
+ { 
+     ++melyseg; 
+for (int i = 0; i < melyseg; ++i) 
+os << "---"; 
+kiir ( elem->nullasGyermek (), os); 
+os << elem->getBetu () << "(" << melyseg - 1 << ")"<< std::  
+endl; 
+kiir ( elem->egyesGyermek (), os); 
+--melyseg; }
+
+}
+o
+//preorder 
+void kiir (Csomopont * elem, std::ostream & os) 
+{ if (elem != NULL) 
+{ 
+++melyseg; 
+for (int i = 0; i < melyseg; ++i) 
+os << "---"; 
+os << elem->getBetu () << "(" << melyseg - 1 << ")" << std::  
+endl; 
+kiir ( elem->nullasGyermek (), os); 
+kiir ( elem->egyesGyermek (), os); 
+--melyseg; } }
+
+
+//postorder
+ void kiir (Csomopont * elem, std::ostream & os) 
+{ if (elem != NULL) 
+{
+ ++melyseg; 
+for (int i = 0; i < melyseg; ++i) os 
+<< "---"; 
+kiir ( elem->nullasGyermek (), os); 
+kiir ( elem->egyesGyermek (), os);
+os << elem->getBetu () << "(" << melyseg - 1 << ")" << std:: 
+ endl; 
+--melyseg; }
+ }
+
+}]]></programlisting>  
+
+    </section>        
+                        
+    <section>
+        <title>Tag a gyökér</title>
+        <para>
+            Az LZW algoritmust ültesd át egy C++ osztályba, legyen egy Tree és egy beágyazott Node
+            osztálya. A gyökér csomópont legyen kompozícióban a fával!
+        </para>
+        <para>
+            Megoldás forrása:  <link xlink:href=' //github.com/Samate99/Hello-world/blob/master/Prog1/lwzbinfa.cpp'> //github.com/Samate99/Hello-world/blob/master/Prog1/lwzbinfa.cpp</link> 
+        </para>
+        <para>
+            Na tehat ebben a reszben a feladatunk nagyon hasonló az előzőkhöz . Lényegében a mar fentebb említett C nyelven megírt binfa egy C++ változatáról beszélhetünk.
+            A program mivel ugyanaz csak egy mas programozoi nyelvben lett leírva ugyanazt csinalja mint a C nyelven írt binfa ugyanugy a veszteségmentes tomoritésben van fontos szerepe.
+            Erdemes megneznunk magat a kód felépítését.Ahogy lathatjuk a programnak 2 része van rendelkezünk egy privat illetve egy public résszel is .
+            A fában átalakításokra is lesz szükség ebben az esetben a gyökér csomópont változáson megy át . Megfigyelhetjük a csomópontok épülését a fában . A programban tovabba 
+            lathatjuk a tagfüggvény tulterhelését . Utana megnezzuk hogy az esetben eppen mivel kell dolgoznunk ketto lehetoseg van vagy 0-as vagy 1essel
+            gyakorlatilag mindket részben ugyanaz zajlik le. Nezzuk meg az 1-essel szemleltetve. Megvizsgáljuk hogy van 1 es ha van akkor arra haladunk tovabb ha nincs akkor letrehozunk egy egyest.
+            A C++ ba áthelyezett program esetén is fontos a befile illetve a kifile használata futtatáskor.
+        </para>
+    </section>        
+                
+    <section>
+        <title>Mutató a gyökér</title>
+        <para>
+            Írd át az előző forrást, hogy a gyökér csomópont ne kompozícióban, csak aggregációban legyen a 
+            fával!
+        </para>
+        <para>
+            Megoldás forrása:  <link xlink:href=' https://github.com/Samate99/Hello-world/blob/master/Prog1/lwzbinfa.cpp'> https://github.com/Samate99/Hello-world/blob/master/Prog1/lwzbinfa.cpp</link> 
+        </para>
+        <para>
+            Tehat a feladatunkban tovabbra is a binfat kell jobban tanulmanyoznunk illetve a binfaban kelll különboző modosításokat létrehoznunk . A feladatunk hogy a gyökér ne kompozícióban legyen hanem aggregacióban .
+            Ez a gyakorlatban azt jelenti hogy a fa egy részét át kell dolgoznunk illetve hogy megfelelő kapcsolat legyen azaz aggregaciós érdemes mutatókat hasznalni . Viszont ha mutatókat hasznalunk az több hibát is előhozhatunk
+            kezdhetünk azzal hogy gyakorlatilag más szintaktikai elemeket kell alkalmaznunk illetve átjavítanunk hogy lefusson a program . A legelső lépés az lenne hogy a  gyokeret a megfelelő szabalyok szerint atírjuk pointerre .
+        
+        </para>
+    </section>                     
+
+    <section>
+        <title>Mozgató szemantika</title>
+        <para>
+            Írj az előző programhoz mozgató konstruktort és értékadást, a mozgató konstruktor legyen a mozgató
+            értékadásra alapozva!
+        </para>
+        <para>
+           Megoldás forrása:    <link xlink:href=' https://github.com/Samate99/Hello-world/blob/master/Prog1/z3a9.cpp'> https://github.com/Samate99/Hello-world/blob/master/Prog1/z3a9.cpp</link> 
+        </para>
+        <para>
+A binfa témakör utolsó állomására értünk ebben a peldaban a feladatunk a mozgató szemantika viselkedésének megvizsgálása lesz. A mozgató szemantika esetében arról beszélhetünk hogy letre kell hoznunk egy Operatort
+Az ő feladata lesz hogy a program lefutása során lemásolja magát . Természetesen egy adott metódus szerint történnek az események. A ujjepules iranyat a rekurzív függvény határozza meg .
+A programban az 1es és a 0as gyermekek vizsgálatát ő fogja elvégezni . Ennek segítésével donti el a program hogy merre haladjon . A program egyszeruen uj csomopontokat hoz letre es lemasolja magat . 
+Tehat maga az std::move nem vegez mozgatast 
+        </para>
+    </section>                     
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+</chapter>                

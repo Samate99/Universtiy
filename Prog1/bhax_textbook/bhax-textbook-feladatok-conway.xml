@@ -1,0 +1,118 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Conway!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+    <section>
+        <title>Hangyaszimulációk</title>
+        <para>
+            Írj Qt C++-ban egy hangyaszimulációs programot, a forrásaidról utólag reverse engineering jelleggel
+            készíts UML osztálydiagramot is!
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://bhaxor.blog.hu/2018/10/10/myrmecologist">https://bhaxor.blog.hu/2018/10/10/myrmecologist</link>
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href=' https://github.com/Samate99/Hello-world/tree/master/Prog1/Myrmecologist'> hhttps://github.com/Samate99/Hello-world/tree/master/Prog1/Myrmecologist</link>                
+        </para>
+        <para>
+            Ez a szimulació egy nagyon erdekes muvelet . Vegrehatjasahoz viszont tobb egyéb csomag , program telepítésére van szükség
+            ilyen peladaul a libqt4 csomag amelyet telepítenünk kell . Miutan a telepítéséek lezajlottak kiemelném a qmake hasznalatat , ennek segítségével
+            fogjuk megkapni a makefilet ami a program futtatásához elengedhetetlen. Nézzük is meg a kódot ahogy lathatjuk a main függényen belül több helyen adatokat kell megadnunk illetve
+            deklarálnunk kell . Lathatjuk hogy a program legalbb 3 elkulonithető osztallyal /resszel rendelekezik . Ant , Antwim és Anthread lesz ez a 3 osztály. 
+            Nézzük is meg őket egyesével nézzük meg hogy mi miért felelős . Tehat az Antwin lesz az osztaly amelynek feladata a megjelenítés ebben tudjuk megadni az ablak tulajdonságait , méreteit , szélességét pixeleinek szamat stb....
+            Az Ant maga a virtualis "hangyak" tulajdonsagait fogja tartalmazni . Tehat ebben a reszben szerepelnek a hangyaink mozgasat  , koordinalasat rögzítő beállítások . Itt lathatjuk a Hangyak mereteit , illetve mozgasuk elorre
+            meghatarozott iranyat . Vegul nezzuk meg az Anthreadet hogy mit is tartalmaz . Az Antthread eleg sok dolgot tartalmaz . Igy első korben kiemelném hogy tartalmazza a szimulacióban résztvevő hangyak számát, 
+            illetve tartalmazza a hangyak utvonalait , tovabba ebben a reszben adhatjuk meg a feromont a feromon párolgásának mértékét és egyéb feromon adatokat amelynek segítségével képesek leszünk a hangyak "iranyítására"
+            Kiemelném hogy a programban tobb elorre definialt bind is talalható ilyen peldauil a P amely feltételezéseim szerint az angol PAUSE  szóból eredhet . Lenyomásával termeszetesn meg tudjuk allítani a folyamatot szüneteltetni tudjuk.
+            A kovetkező ilyen a Q lesz ez az angol QUIT szóbol ered gondolom . Ennek lenyomásával kitudunk lepni a folyamatból.
+            
+        </para>            
+    </section>        
+    <section>
+        <title>Java életjáték</title>
+        <para>
+            Írd meg Java-ban a John Horton Conway-féle életjátékot, 
+            valósítsa meg a sikló-kilövőt!
+        </para>
+        <para>
+            Megoldás videó: 
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href='https://github.com/Samate99/Hello-world/blob/master/Prog1/Sejtautomata.java'> https://github.com/Samate99/Hello-world/blob/master/Prog1/Sejtautomata.java</link>             
+        </para>
+        <para>
+         A feladatunk az Élet jatekanak bemutatása .Maga az élet jateka John Hortony Conway kezei között született meg . Ő alkotta meg eme csodás világnak egyszerű szabalyait .
+         Tehat hogy is epül fel ez a vilag nezzük is meg . Ha jobban megnezzük a kódót eszrevesszük hogy  sejteket tartalmaznak  szerintem mindenki szamara
+         feltunő lehet hogy nem egyszeru sejtekről van szó . A sejtek tulajdonsagokkal rendelkeznek . Szamszerint kettővel
+         Beszélhetünk élő és halott sejtekről . Itt jonnek kepben a fentebb már említett uriember nevéhez fűződő szabályok . 
+         Tehat egy sejt akkor gondolok , vélünk élő sejtnek ha van adott számú szomszedja ami esetünkben 2 szomszédnak kell lennie ahoz hogy a sejt eletben maradjon
+         Ha a sejtünk nem rendelkezik szomszeddal akkor "elpusztul".De nem örökre 
+         Ha valamilyen módon kesobb urja szomszédokat fog kapni a sejtünk ujraéled . 
+         Tehat a kepernyőn pixeleket fogunk feldezeni .  A 2 sarokból indulnak el a folyamatok és atlósan töltik meg a képet. 
+         A program futása során random sejt csoportok "agyu-golyók" fognak eletben maradni illetve meghalni , vegul ezekből kerülnek ki a kepeken latható alakzatok , mintak
+         Fontos kiemelni hogy ebben a programban is tobb Bindről beszélhetünk
+         Ilyen peldaul az S az N vagy a G, Az S lenyomásával egy pillanatképpel lehetünk gazdagabbak az eseményről . Az N lenyomásával tudjuk noveli a sejtek méretét vegül pedig  az I-G gombok segítéségével fogunk tudni a folyamat lefolyásának gyorsaságára hatni.
+        </para>            
+    </section>        
+    <section>
+        <title>Qt C++ életjáték</title>
+        <para>
+            Most Qt C++-ban!
+        </para>
+        <para>
+            Megoldás videó: 
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href=' https://github.com/Samate99/Hello-world/tree/master/Prog1/sejtautomata '> https://github.com/Samate99/Hello-world/tree/master/Prog1/sejtautomata </link>                
+        </para>
+        <para>
+            Ez a pelda szinte teljesen ugyanaz legalabbis a feladat . Egyetlen valtozast az jelenti hogy ebben az esetben egy masik nyelvben kell dolgoznunk . A mi esetünkben ez a nyelv a nem a  java  hanem a c++ lesz . 
+            A program megfelelő mukodéséhez , lefutásához , lefordításához különböző szoftverek előtelepítésére . Itt is alkalmaznunk kell a qmake parancsot amelyel le tudjuk generalni az itt is eleg fontos makefilet.
+           Ettol kezdve a program ugyanugy mukodik mint a java kód . Tehat ugyanugy megvannak sejtjeink ugyanugy elindulnak a pixeleken ugyanugy elhallnak illetve felélednek és így hozzák létre a dolgokat .
+        </para>  
+        
+        <figure>
+            <title> John Horton Conway-féle életjáték Forrás : Batfai Norbert </title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="pic/kep.png" scale="70"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        
+        
+    </section>        
+    <section>
+        <title>BrainB Benchmark</title>
+        <para>
+        </para>
+        <para>
+            Megoldás videó: 
+        </para>
+        <para>
+            <link xlink:href=' https://github.com/Samate99/Hello-world/tree/master/Prog1/brainB'> https://github.com/Samate99/Hello-world/tree/master/Prog1/brainB</link>             
+        </para>
+        <para>
+            A BrainB Bechnmark talan szamomra a legerdekesebb program nagyon szeretem az esportot jelenelg is erősen csgozok es probalok benne eredményket elerni . Habar ez a program nem feltetlenul a cs-seknek szól
+            inkabb a lolosok , dotasok szamara lehet hasznos . Tudjuk hogy ez a program a tehetséges esport jatekosok felfedezésére illetve a jelenleg is aktív jatekosok tesztelésére felmérése lehet hasznos . 
+            Megmondom oszinten nagyon erdekelne hogy egy Profi mezőnybe jatszó esportoló milyen eredményeket lenne kepes elerni a jatekban.
+            A programban az eger segítésével kell egy bizonyos pontban tartani az egeret mikozben egyeb tenyezok jelen esetben negyzetek hatraltatnak . Ha jól haladunk a jatek szerint akkor egyre gyorsabb lesz illetve
+            a negyzetek szama megnő ha elveszítjuk "karakterünket" akkor lassul a mozgás .
+            A program megfelelő hasznalatahoz telepítenünk kell egyéb programokat peldaul a  OpenCV-t illetve a libqt-t
+            Ha ezt telepítettük mar csak el kell indítani a programot es elkezdhetjük tesztelni a kepessegeinket es akar statisztikakkal is alatamaszthatjuk a bennünk rejlő potencialt . 
+        </para>            
+    </section>   
+            <figure>
+            <title> BrainB Benchmark : Batfai Norbert </title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="pic/asdfasdfasdf.png" scale="70"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+    
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+</chapter>                

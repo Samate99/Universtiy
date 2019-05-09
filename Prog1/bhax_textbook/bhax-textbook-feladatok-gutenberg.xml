@@ -1,0 +1,112 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Gutenberg!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+        <cover>
+            <para>
+                Programozás tankönyvek rövid olvasónaplói.
+            </para>
+        </cover>
+    </info>
+    <section>
+        <title>Programozási alapfogalmak</title>
+        <para>         
+            <citation>PICI</citation>       
+        </para>
+        <para>
+Tehat eljutottunk a konyunk utolsó részéhez . Ebben a részben a feladatunk egy olvasónapló kidolgozása lesz.
+Az olvasó napló 3 könyvből fog összetevődni.
+Az első köny a méltán híres Juhasz Istvan kezei közül kikerült alkotás lesz
+amely a Magas Szintű programozási nyelvek 1 címet viseli. Kiemelném Juhasz Istvan munkassagat
+hisz meghatározó alakja volt a Debreceni Egyetemi informatika oktatasban illetve 
+A diakok a mai napig emlegetik feltöltött jegyzeteit hasznaljak , hasznosítjak 
+ami nem sok mamár nem tanító oktatóról mondható el véleményem szerint. A masodik alkotás Benedek
+Zoltán: Szoftverfejlesztés C++ nyelven címü könyv lesz reszemrol ez is egy igen erdekes 
+olvasmany volt hasonlóan a harmadik kincshez ami Brian W.Kernighan  és Dennis M. Ritchie . The C programming
+lanugage nevet viseli.
+Tehat akkor kezdjük is feldolgozni a könyveket egyesével . 
+Tehat az első a Juhasz Istvan féle könyv ez egy  oldalas alkotás .
+Az alkotásban több részt különböztethetünk meg . A mu első felében megismerkedhetünk az alapfogalmakkal
+. A programozási nyelvek 3 szintjevel a gepi nyelvel az assaembly nyelvel és az alltalunk ismert és hasznalt  magas szintu programozási nyelvekkel . 
+Tehat nezzük is meg miben kulonboznek ezek a nyelvek mire jók mire hasznaljuk vagy eppen nem hasznaljuk oket. A gepi nyelv 
+az a processzor számára érthető nyelv . Minden processzor gepi nyelvel rendelkezik . Ez egy rendkívül bonyolult illetve összetett nyelv . Emiatt nem is tanuljuk . 
+Viszont rendkívül sokat foglalkozunk vele hisz az összes Magas szintu nyelven megírt program vagy ugynevezett forrásprogram erre a nyelvre kerül lefordításra .
+Tehat amikor mi lefordítunk egy programot abban az esetben az alltalunk leírt magas szintu nyelv atkerül gepi nyelvé . Es így kepes lefutni . A szovegben olvashatunk a 
+fordításról tudjuk hogy ez egy nagyon fontos feladat hisz ez kódolja át a masik nyelvre. Fontos kiemelni hogy a program vegignezi hogy mit hasznaltunk es  hibakat keres
+a kódolasunkban ez azert fontos mert így konnyeden megkapjuk a hibakat , kiemelném hogy a program egy apró hiba esetén is visszadobja a kódot tehat ha csak egy kis hiba van akkor se fordul le.
+Ez azert van mert a program egészét nézi nem pedig sorokra vagy részekre bontva fordítja a programot. Az alkotásban
+tovabba olvashatunk a kulonbozo magasszintu programozasi nyelvek különböző szabalyairól illetve alap elgondolásaikról.
+Folytatásként akkor nezzük meg a programozási nyelvek alapelemeit .Ki nem talalná mi is a legkisebb
+epítő elem egy programban . Ez az epítő elem nem más mint a karakterek . Mik is azok a karakterek.
+A karaktereként elnevezve elég sok minden tartunk számon kezdve a betűkkel es szamokkal ugynevezett specialis karakterekkel.
+Specialis karakter néven értem a vesszőt nyilakat kulonböző zárójeleket . Betukket is kiemelném hisz rengeteg beturol beszélhetünk
+hisz barmely nyelv betuit hasznalhatjuk a kódunkban tehat karakternek minősülnek a kínai íras elemei a ciril betük és 
+természetesen az alltalunk ismert betük . Fontos kiemelni nem minden fordító és programnyelv képes minden karaktert megfelelően kezelni
+tobb program is megkuzd az ékezetekkel és egyéb karakterekkel . Kivételt élveznek ezalól a kommentbe írt dolgok
+mivel ezek az kód olvasójához szolnak , nincs közül a fordításhoz nem fordítja la őket a program . 
+Fontos hogy vannak olyan szovegek karakterekek szavak amelyeknek az eppen írt nyelvben rendelkeznek kulonboző tulajdonsaggal.
+Tehat előrre megadott dolgokat hívnak eletbe ilyen peldaul az IF a for a while vagy akar a case.
+elég sok eszközt hasznalunk és tobbet is kiemelnék illetve kiemel a könyv  . Ilyenek peldaul a kontstansok amelyek segítségével egy fix értéket rakhatuk a kódba 
+vagy ilyenek a nevesített konstansok amelyek segítségével ugyanugy értékeket tudunk megadni . Ezt a megadási módot deklarásálnak nevezzük
+itt érdemes szót ejteni az  adattipusokról . Eleg sok adattipus van amelyeket a megfelelő modon kell hasznalnunk
+beszélhetünk int double  char vagy akar a tombi is , és egyéb tipusokról . Ezek előrre megszabalyozzák hogy mire fogjuk hasznalni az adatot .
+Ezeken felül a könyv szerint egy program írása kozben rengeteg dologgal talalkozhatunk .Találkozhatunk ugynevezett kifejezésekkel ilyenek peldaul az operandusok operatorok
+Ezekhez a reszhez tartoznak a zarójelek egy része amelyeket rengetegszer hasznalunk egy progarm irásánál.
+A kovetkező nagy rész az utasítások része lesz . Ebben a részben talalkozhatunk az utasítások 2 csoportjával a deklarációval es a vegrehajtásos utasítással.
+Nos akkor mi is ak kulonbség ekozott a 2 utasítási rendszer között . Az első esetéében a fordításkor hasznalt fordítóprogrammal való szerepe miatt fontos.
+Ez a fajta utasítás befolyásolja a fordítórprogram fordítását. A masodik viszont a kódolás során nyilvanul meg ezekkel az utasításokkal mar mindannyian talalkoztunk
+ilyenek peldaul az ertekadó utasítások és ciklusszervező , az egyéb utasítások.
+        </para>
+    </section>        
+    <section>
+        <title>Programozás bevezetés</title>
+        <para>                
+            <citation>KERNIGHANRITCHIE</citation>
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://youtu.be/zmfT9miB-jY">https://youtu.be/zmfT9miB-jY</link>
+        </para>
+        
+        <para>
+            A kovetkező szamunkra fontos konyv A Brian W.Kernighan  és Dennis M. Ritchie . The C programming
+lanugage nevet viseli.Ebben a konyvben a C nyelv sajátosságaival fogunk megismerkedni.Így kezdésként fontos 
+kiemelni hogy a C nyelv maga rendkivul sok specialis tulajdonsággal rendelkezik nezzuk meg akart a vesszőt ha egy sort vagy tobb sort egy vessző követ akkor alltalaban annak elvalasztasi funkciót
+adunk velemenyem szerint. A C nyelvben való kódoláskor nem érdemes ilyet hasznalni mivel könnyen lefordulási problémmakkal talalkozhatunk . Mivel ha egy sort vesszővel zarunk az itt utasításnak minősül .
+Ebben a nyelvben kifejezzen fontos a kapcsos zarójelek megfelelő hasznalata mert ez is konnyen hibahoz vezethet.
+Tovabba fontos kiemelni hogy tobb dologban megegyezik a tobbi nyelvek ugyanugy hasznalhatunk megfelelő ciklusokat ugyanugy Ifel tudunk választ kérni / adni ugyanugy tudunk Switchet alkallmazni hogy 
+elágazásokat vezessünk be.
+A konyvben kulon szóba kerülnek a ciklusok illetve a ciklusok alkalmazása . Hisz tudjuk hogy a különböző ciklusok között (while, do-while , for) akkora kulonbség nincs tehat ugyanugy feltételt kell megadni.
+Talan ami fontosabbnak tekinthető hogy van olyan fajta ciklus amely 1x mindenfelepkeppen lefut illetve van olyan amelynek ha nincs megfelelő feltétel egyszer sem fut le. A C++ ban mar megtanult cout helyett Cben a printF függvényt kell
+hasznalnunk hogy a megfelelő dolgokat kiirassuk az outputra.
+Így összességében a C nyelv egy nagyon érdekes nyelv amely talan az egyik  nehezebb de velemenyem szerint ez ízlések és pofonok hogy eppen ki miben szeret és akar vagy eppen miben köteles programozni.
+            
+        </para>
+    </section>        
+    <section>
+        <title>Programozás</title>
+        <para>                
+            <citation>BMECPP</citation>
+        </para>
+         <para>
+             A harmadik és egyben utolsó  könyv a Benedek
+Zoltán: Szoftverfejlesztés C++ nyelven címet viseli 
+Az alkotás fő témája a c++ nyelv amely egy nagyon fontos nyelvé nőtte ki magát napjainkra .
+Tehat a Benedek Zoltán Féle "BME-S"
+Könyvben rengeteg C++ informacióval lehetünk gazdagabbak .
+A konyvben megismerhetjük a Függvényparaméterek megfelelő
+mukodését meglathatjuk , Megismerhetjük hogy mikre eppen mit ad vissza.
+Megismerhetjük hogy a c++ nyelvben a függvényeket mi azonosítja
+tehat megtudjuk hogy ez a dolog a nevük és az argumentumlistajuk.
+Tehat a C kóddal ellentétben C++ ban lehet 2 függvény azonos névvel
+ha az argumentumlistajuk kulonbozo.
+Megismerkedhetünk a c++ memóriakezelési képességeivel .
+Azaz hogy ebben az esetben ezt a feladatot  Operátorok látják el
+Cvel ellentétben ahol függvény végzik ugyanezt a dolgot .
+A c++ rengeteg kiváló tulajdonságát lathatjuk meg a konyvben
+ilyen peldaul a hibakezelése ami sokkal atlathatóbb és talan konnyebb is
+mint a Cnek
+         </para>
+    </section>        
+</chapter>                

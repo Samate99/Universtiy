@@ -1,0 +1,134 @@
+<revhistory xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <revision>
+        <revnumber>0.0.1</revnumber>
+        <date>2019-02-12</date>
+        <authorinitials>nbatfai</authorinitials>
+        <revremark>
+            Az iniciális dokumentum szerkezetének kialakítása.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.0.2</revnumber>
+        <date>2019-02-14</date>
+        <authorinitials>nbatfai</authorinitials>
+        <revremark>
+            Inciális feladatlisták összeállítása.
+        </revremark>
+    </revision>    
+    <revision>
+        <revnumber>0.0.3</revnumber>
+        <date>2019-02-16</date>
+        <authorinitials>nbatfai</authorinitials>
+        <revremark>
+            Feladatlisták folytatása.
+            Feltöltés a BHAX csatorna 
+            <link xlink:href="https://gitlab.com/nbatfai/bhax">https://gitlab.com/nbatfai/bhax</link>
+            repójába.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.0.4</revnumber>
+        <date>2019-02-19</date>
+        <authorinitials>nbatfai</authorinitials>
+        <revremark>
+            Aktualizálás, javítások.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.0.5</revnumber>
+        <date>2019-03-03</date>
+        <authorinitials>Sántha Máté Imre</authorinitials>
+        <revremark>
+            első fejezet kész 
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.0.6</revnumber>
+        <date>2019-03-11</date>
+        <authorinitials>Sántha Máté Imre</authorinitials>
+        <revremark>
+           Második fejezet kész 
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.0.7</revnumber>
+        <date>2019-03-18</date>
+        <authorinitials>Sántha Máté Imre</authorinitials>
+        <revremark>
+            Harmadik fejezet kész 
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.0.8</revnumber>
+        <date>2019-03-26</date>
+        <authorinitials>Sántha Máté Imre</authorinitials>
+        <revremark>
+            Negyedik fejezet kész .
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.0.9</revnumber>
+        <date>2019-03-29</date>
+        <authorinitials>Sántha Máté Imre</authorinitials>
+        <revremark>
+            olvasónapló kész
+        </revremark>
+    </revision>
+        <revision>
+        <revnumber>0.1.0</revnumber>
+        <date>2019-04-02</date>
+        <authorinitials>Sántha Máté Imre</authorinitials>
+        <revremark>
+            Ötödik fejezet kész 
+        </revremark>
+    </revision>
+        <revision>
+        <revnumber>0.1.1</revnumber>
+        <date>2019-04-10</date>
+        <authorinitials>Sántha Máté Imre</authorinitials>
+        <revremark>
+            Hatodik fejezet kész
+        </revremark>
+    </revision>
+        <revision>
+        <revnumber>0.1.2</revnumber>
+        <date>2019-04-17</date>
+        <authorinitials>Sántha Máté Imre</authorinitials>
+        <revremark>
+            Hetedik fejezet kész
+        </revremark>
+    </revision>
+        <revision>
+        <revnumber>0.1.3</revnumber>
+        <date>2019-04-24</date>
+        <authorinitials>Sántha Máté Imre</authorinitials>
+        <revremark>
+            Nyolcadik fejezet kész
+        </revremark>
+    </revision>
+        <revision>
+        <revnumber>0.1.4</revnumber>
+        <date>2019-04-30</date>
+        <authorinitials>Sántha Máté Imre</authorinitials>
+        <revremark>
+           Kilencedik Fejezet Kész
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.1.5</revnumber>
+        <date>2019-05-05</date>
+        <authorinitials>nbatfai</authorinitials>
+        <revremark>
+            Hibák  javítása.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>1.0.0</revnumber>
+        <date>2019-05-08</date>
+        <authorinitials>nbatfai</authorinitials>
+        <revremark>
+            Első teljes kiadás
+        </revremark>
+    </revision>
+    
+</revhistory>
