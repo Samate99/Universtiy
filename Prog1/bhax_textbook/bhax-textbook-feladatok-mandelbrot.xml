@@ -356,10 +356,9 @@ main ( int argc, char *argv[] )
             hisz ezzel a programmal tudta kirajzoltatni a biomorfok első "csapatát"
             Tehat itt is rajzoltatni fogunk valamit kiemelném hogy itt is fontos a megfelelő dolgok telepítése hisz ezek nélkül megint rossz eredményhez juthatunk .
             Kiemelném a julia halmazt hisz ez egy a Mandelbrot halmazhoz hasonló halmaz azzal a kivetellel hogy ami a mandelbrót állandó az a Julia halmazban inkabb valtozó . 
-            Tehat itt is egy szamolás fog kovetkezni az előző példához hasonlóan itt is rácspontokat fog a program számunkra szamolni . Kisebb-Nagyobb eltérésekkel itt is at fogjuk adni illetve ki fogjuk szamolni az adatokat 
+            Tehat itt is egy szamolás fog kovetkezni az előző példához hasonlóan itt is rácspontokat fog a program számunkra szamolni . Kisebb-Nagyobb eltérésekkel s at fogjuk adni illetve ki fogjuk szamolni az adatokat 
             illetve fel fogjuk tolteni a racspontokat . Miutan feltolttuk a racspontokat és megadtuk a valtozókat illetve a képünk méretét itt is egy PNG formátumú alkotással lehetünk boldogabbak .
-            Tehat  biomorfokra Clifford Pickover talalt rá a julia halmazokat rajzoló hibás programjával. 
-
+            
         </para>  
         <programlisting language="c"><![CDATA[Program T100
 // Verzio: 3.1.3.cpp
