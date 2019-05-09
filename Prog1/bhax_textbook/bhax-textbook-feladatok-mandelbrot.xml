@@ -352,7 +352,7 @@ main ( int argc, char *argv[] )
         </para>
         <para>
             Tehetjük fel hogy honnan is erednek a biomorfok . Hát gyakorlatilag egy Hiba , tévedés  miatt talaltak ra ezekre mint egyéb más dolgokra.
-            Clifford Pickover volt az személy aki megpróbálta a Julia halmazokat kirajzoltatni sajnos az alltala megírt program több helyen is hibákkal rendelkezik de szerencséjére ez hozta meg számára sikerült
+            Clifford Pickover volt az személy aki megpróbálta a Julia halmazokat kirajzoltatni sajnos az alltala megírt program több helyen is hibákkal rendelkezik de szerencséjére ez hozta meg számára sikert
             hisz ezzel a programmal tudta kirajzoltatni a biomorfok első "csapatát"
             Tehat itt is rajzoltatni fogunk valamit kiemelném hogy itt is fontos a megfelelő dolgok telepítése hisz ezek nélkül megint rossz eredményhez juthatunk .
             Kiemelném a julia halmazt hisz ez egy a Mandelbrot halmazhoz hasonló halmaz azzal a kivetellel hogy ami a mandelbrót állandó az a Julia halmazban inkabb valtozó . 
