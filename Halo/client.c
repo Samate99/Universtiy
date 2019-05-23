@@ -97,7 +97,7 @@ int player1_Elso=1, player1_Masodik = 1 , player2_Elso=1, player2_Masodik=1, dob
 		}
 		else if(strncmp(buffer,"ujgame",6)==0){  
 		  printf("Az ellenfél szeretne új játékot\n");	         
-          printf("Szeretnél új játékot kezdeni,vagy vége?(Ird be: ujra,vege):");    
+          printf("Szeretnél új játékot kezdeni,vagy vége mára ?( ujra,vege):");    
 		while(1)                              
 				{
 					fgets(buffer,100,stdin);
