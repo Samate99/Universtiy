@@ -214,7 +214,7 @@ recv(fdc2, buffer, 100, 0 );
 			if(strncmp(buffer,"vege",4)==0)
 				{
              				 send(fdc1, "vege", 100, 0);
-					break; //kilep a ciklusbol
+					break; 
 				}
 			//ha igen
                 	if(strncmp(buffer,"ujra",4)==0)
@@ -227,7 +227,7 @@ recv(fdc2, buffer, 100, 0 );
 			if(strncmp(buffer,"vege",4)==0)
 				{
              	 			send(fdc2, "vege", 100, 0);
-					break; //kilep a ciklusbol
+					break; 
 				}
 			//ha akar
                  	if(strncmp(buffer,"ujra",4)==0)
@@ -286,7 +286,7 @@ if(j21>49 && j22>49)
 			if(strncmp(buffer,"vege",4)==0)
 				{
              				 send(fdc1, "vege", 100, 0);
-					break; //kilep a ciklusbol
+					break; 
 				}
 			//ha yes
                 	if(strncmp(buffer,"ujra",4)==0)
@@ -299,7 +299,7 @@ if(j21>49 && j22>49)
 			if(strncmp(buffer,"vege",4)==0)
 				{
              	 			send(fdc2, "vege", 100, 0);
-					break; //kilep a ciklusbol
+					break; 
 				}
 			// akar
                  	if(strncmp(buffer,"ujra",4)==0)
