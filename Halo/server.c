@@ -280,28 +280,28 @@ if(j21>49 && j22>49)
             		           		
               		send(fdc2, "Nyertél", 100, 0);			
               		send(fdc1, "Vesztettél", 100, 0);
-			//akare a kettes új játékot
+			//Kettes eseteben ujra jatszas
 			recv(fdc2, buffer, 100, 0 );
-			//ha nem
+			//ha no
 			if(strncmp(buffer,"vege",4)==0)
 				{
              				 send(fdc1, "vege", 100, 0);
 					break; //kilep a ciklusbol
 				}
-			//ha igen
+			//ha yes
                 	if(strncmp(buffer,"ujra",4)==0)
 				{
 				  send(fdc1,"ujgame",100,0);
 				}
 			
               		recv(fdc1, buffer, 100, 0 );
-			//ha a másik játékos nem akar
+			// a másik játékos nem akar
 			if(strncmp(buffer,"vege",4)==0)
 				{
              	 			send(fdc2, "vege", 100, 0);
 					break; //kilep a ciklusbol
 				}
-			//ha akar
+			// akar
                  	if(strncmp(buffer,"ujra",4)==0)
                			{
 					indul = 1;                    			
