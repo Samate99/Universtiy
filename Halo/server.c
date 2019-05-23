@@ -36,14 +36,14 @@ int main(int argc, char *argv[] ){ // arg count, arg vector
 
 
 // Maga a socket 
-   fd = socket(AF_INET, SOCK_STREAM, 0 );   //AF_INET az internetről érkező IPcimekre hivatkozik
-   if ( fd < 0 ) {                         //Sock stream maga a csatlakozó tipus
-      exit(1);              //Ha a socket fuggveny alltal visszaadott ertek kisebb mint 0 ha igen kilep hibakóddal ha nem akkor letrejon a socket
+   fd = socket(AF_INET, SOCK_STREAM, 0 );   
+   if ( fd < 0 ) {                      
+      exit(1);              
       }   	
 
 
-   setsockopt(fd, SOL_SOCKET, SO_REUSEADDR, (char *)&on, sizeof on); //Keepalive a rendszeres uzenetvaltasokkal aktív marad ha az uzenetekre nem kapunk választ a sockettol akkor megszakad
-   setsockopt(fd, SOL_SOCKET, SO_KEEPALIVE, (char *)&on, sizeof on);  //A kovetkezo reszben lathatunk egy mutatot ami az on memoriacimre mutat az utolso reszben pedig lathatjuk az on meretet
+   setsockopt(fd, SOL_SOCKET, SO_REUSEADDR, (char *)&on, sizeof on); 
+   setsockopt(fd, SOL_SOCKET, SO_KEEPALIVE, (char *)&on, sizeof on);  
 
 
 	
@@ -61,7 +61,7 @@ int main(int argc, char *argv[] ){ // arg count, arg vector
 		send(fdc2,"skr",100,0); 
 
     srand ( time(NULL) );
-    int j11=1,j12=1,j21=1,j22=1;  //EZ maga a "Palya"    11 ,12 a client egy elso es masodik babujanak utvonala a j21 ,j22 a client ketto elso es masodik babujanak helye
+    int j11=1,j12=1,j21=1,j22=1;  // 11 ,12 a client egy elso es masodik babujanak utvonala a j21 ,j22 a client ketto elso es masodik babujanak helye
     int n;                                // megjelenik az N ami a random szamunk vagyis maga a dobókocka
     int indul = 0;                
     int temp;    //ezzel van megoldva hogy ne mindig ugyanaz a jatekos kezdjen 
@@ -76,7 +76,7 @@ int main(int argc, char *argv[] ){ // arg count, arg vector
             fdc2 = temp;
            	 }
             indul = 0;
-	// Elso playeer
+	// jatekos 1
 	//elküldi a helyzetét az első játékosnak
 	   n = rand() %6 +1; // dobott szam
            sprintf(buffer,"Saját bábuid pozíciója: [%d] [%d]\nEllenfél bábuinak pozíciója: [%d] [%d]\ndobott szám: {%d}\n",j11,j12,j21,j22,n);
@@ -99,7 +99,7 @@ int main(int argc, char *argv[] ){ // arg count, arg vector
 		if(strncmp(buffer,"vege",4)==0)
 			{
 				send(fdc2, "vege", 100, 0); 
-				break; //kilep a ciklusbol
+				break; 
 			}
 		//ha egyes játékos akar uj játékot
                 if(strncmp(buffer,"ujra",4)==0)  
@@ -163,24 +163,24 @@ int main(int argc, char *argv[] ){ // arg count, arg vector
           if(j11>49 && j12>49)
 		{
                 	              
-                	send(fdc1, "Nyertél", 100, 0);			//eredmenyek
-              		send(fdc2, "Vesztettél", 100, 0);               //eredmenyek 
+                	send(fdc1, "Nyertél", 100, 0);			
+              		send(fdc2, "Vesztettél", 100, 0);                
               		//akarnake új játékot
 			recv(fdc1, buffer, 100, 0 );        
-			//ha egyes játékos nem akar uj játékot
+			//ha az elso játékos nem akar uj játékot
 			if(strncmp(buffer,"vege",4)==0)
 			{
 				send(fdc2, "vege", 100, 0);
 				break;
 			}
-			//ha egyes játékos akar uj játékot
+			//ha elso játékos akar uj játékot
                		 if(strncmp(buffer,"ujra",4)==0)
 			{				
 				send(fdc2,"ujgame",100,0);
 			}
 		
 
-			//kettes akare e uj játékot
+			//masodik akare e uj játékot
                 	recv(fdc2, buffer, 100, 0 );
 			if(strncmp(buffer,"vege",4)==0)
 			{
@@ -193,11 +193,11 @@ int main(int argc, char *argv[] ){ // arg count, arg vector
                    	 	continue;
 			}
               }
-//válaszol a lépés utáni pozicioval	
+// lépés utáni poziciok	
 sprintf(buffer,"Saját bábuid pozíciója: [%d] [%d]\nEllenfél bábuinak pozíciója: [%d] [%d]\n",j11,j12,j21,j22); 
 send(fdc1, buffer, 100, 0); 
 
-//Ugyanez csak a masodik jatekos eseteben
+//masodik jatekos esete
 n = rand() %6 +1;	
 sprintf(buffer,"Saját bábuid pozíciója: [%d] [%d]\nEllenfél bábuinak pozíciója: [%d] [%d]\ndobott szám: {%d}\n",j21,j22,j11,j12,n);  
 send(fdc2, buffer, 100, 0);
