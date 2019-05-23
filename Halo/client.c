@@ -86,36 +86,36 @@ int player1_Elso=1, player1_Masodik = 1 , player2_Elso=1, player2_Masodik=1, dob
        
         if(strncmp(buffer, "Vesztettél", 10) == 0)    
 		{
-		printf("Vesztettél az ellenfél átlépte a 49. mezőt!\n");  //Kiiratjuk tavozo szoveget a vesztesnek
+		printf("Vesztettél az ellenfél átlépte a 49. mezőt!\n");  
 		recv(fd,buffer,100,0);              
-		if(strncmp(buffer,"vege",4)==0)                                    //Vege=nem akar ujat jatszani 
+		if(strncmp(buffer,"vege",4)==0)                                     
 		{
-			printf("Vége az ellenfél sajnos ma már nem szeretne több játékot\n");  //VEgleges szoveg utolso szoveg a kliens szamara
+			printf("Vége az ellenfél sajnos ma már nem szeretne több játékot\n");  
                         printf("Köszönjük a játékot\n");
 			close(fd);         //vege a kapcsolatnak .
 			exit(0); //kilep a program
 		}
-		else if(strncmp(buffer,"ujgame",6)==0){ //uj jatek lehetosege 
-		  printf("Az ellenfél szeretne új játékot\n");	        //ELlenfel uj jatekot akar uj game kezdodik 
+		else if(strncmp(buffer,"ujgame",6)==0){  
+		  printf("Az ellenfél szeretne új játékot\n");	         
           printf("Szeretnél új játékot kezdeni,vagy vége?(Ird be: ujra,vege):");    
 		while(1)                              
 				{
 					fgets(buffer,100,stdin);
-					if(strncmp(buffer, "ujra",4)==0) // ujra kezdodik a jatek
+					if(strncmp(buffer, "ujra",4)==0)
 					{
 						send(fd, buffer, 100, 0);
 		        			break;
 					}
 					if(strncmp(buffer, "vege",4)==0)
 					{
-						send(fd, "vege", 100, 0); //vege a jateknak
+						send(fd, "vege", 100, 0); 
                         
-                        printf("Nem szeretnél új jatekot kezdeni !\n");  //Zaró uzenet. Itt a jatek lezarul
+                        printf("Nem szeretnél új jatekot kezdeni !\n"); 
                         printf("Köszönjük a játékot\n");
 						close(fd);
 		    				exit(0);
 					}
-				printf("Rossz választ adtál meg kérlek válassz e kettő szó közűl : ujra,vege \n");  // 2 szót nem sikerült beírnia a kliensunknek !-_-  ujra probalkozhat
+				printf("Rossz választ adtál meg kérlek válassz e kettő szó közűl : ujra,vege \n"); 
 				}
 				continue;		   
             	}
@@ -123,7 +123,7 @@ int player1_Elso=1, player1_Masodik = 1 , player2_Elso=1, player2_Masodik=1, dob
 	//Megerkezdtünk a feladjuk reszhez 
         if(strncmp(buffer, "Feladta",7)==0)              
         {  
-			printf("Nyertél az ellenfél feladta a játékod !\n");  //Gyoztesnek
+			printf("Nyertél az ellenfél feladta a játékod !\n");  
  
 		   		recv(fd,buffer,100,0);      //feladasi eset
 			
@@ -215,7 +215,7 @@ int player1_Elso=1, player1_Masodik = 1 , player2_Elso=1, player2_Masodik=1, dob
          }       
          if((strncmp(buffer, "Nyertél",7) == 0))
 		{
-                    	printf("Gratulálunk ! Te  Nyerted meg a jatekot ! \n");	// Nyertes alap uzenet nem feladas esete		
+                    	printf("Gratulálunk ! Te  Nyerted meg a jatekot ! \n");		
            	    	printf("Szeretnél új játékot kezdeni,vagy mára vége?( ujra) (vege):");
            		while(1)
 				{
@@ -227,7 +227,7 @@ int player1_Elso=1, player1_Masodik = 1 , player2_Elso=1, player2_Masodik=1, dob
 					}
 					if(strncmp(buffer, "vege",4)==0)  //nem szeretne 
 					{
-                                              printf("Nem szeretnél új jatekot kezdeni !\n"); //alap tavozo uzenet
+                                              printf("Nem szeretnél új jatekot kezdeni !\n"); 
                                               printf("Köszönjük a játékot\n"); 
 						send(fd, "vege", 100, 0);
 						close(fd);
@@ -238,7 +238,7 @@ int player1_Elso=1, player1_Masodik = 1 , player2_Elso=1, player2_Masodik=1, dob
 				continue; //uj valaszt kell megadni lehetoleg most megfelelot
                     
                 }
-		//ha nincs vége itt íródik ki a bábuk helyzete lépés után
+		
 		printf("%s", buffer);  //A babuk helyzete Sajat és ellenfel is
 		printf("\n-----------------\nKör vége\n");  // 
            }
