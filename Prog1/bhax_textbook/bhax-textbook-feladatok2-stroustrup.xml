@@ -1,20 +1,16 @@
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
     <info>
-        <title>Helló, Arroway!</title>
+        <title>Helló, Stroustrup!</title>
         <keywordset>
             <keyword/>
         </keywordset>
     </info>
 
     <section>
-        <title>OO szemlélet</title>
+        <title>JDK osztályok</title>
         <para>
-		A módosított polártranszformációs normális generátor beprogramozása Java nyelven. Mutassunk rá,
-hogy a mi természetes saját megoldásunk (az algoritmus egyszerre két normálist állít elő, kell egy
-példánytag, amely a nem visszaadottat tárolja és egy logikai tag, hogy van-e tárolt vagy futtatni kell
-az algot.) és az OpenJDK, Oracle JDK-ban a Sun által adott OO szervezés ua.!
-https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog1_5.pdf (16-22 fólia)
-Ugyanezt írjuk meg C++ nyelven is! (lásd még UDPROG repó: source/labor/polargen)
+		Írjunk olyan Boost C++ programot (indulj ki például a fénykardból) amely kilistázza a JDK összes
+osztályát (miután kicsomagoltuk az src.zip állományt, arra ráengedve)!
 
         </para>
         <para>
@@ -28,15 +24,14 @@ Ugyanezt írjuk meg C++ nyelven is! (lásd még UDPROG repó: source/labor/polar
         </para>
     </section>        
 
+
     <section>
-        <title>Homokozó</title>
+        <title>Másoló-mozgató szemantika</title>
         <para>
-rjuk át az első védési programot (LZW binfa) C++ nyelvről Java nyelvre, ugyanúgy működjön!
-Mutassunk rá, hogy gyakorlatilag a pointereket és referenciákat kell kiirtani és minden máris működik
-(erre utal a feladat neve, hogy Java-ban minden referencia, nincs választás, hogy mondjuk egy
-attribútum pointer, referencia vagy tagként tartalmazott legyen).
-Miután már áttettük Java nyelvre, tegyük be egy Java Servletbe és a böngészőből GET-es kéréssel
-(például a böngésző címsorából) kapja meg azt a mintát, amelynek kiszámolja az LZW binfáját!        </para>
+		Kódcsipeteken (copy és move ctor és assign) keresztül vesd össze a C++11 másoló és a mozgató
+szemantikáját, a mozgató konstruktort alapozd a mozgató értékadásra!
+
+        </para>
         <para>
             Megoldás videó:
         </para>
@@ -46,21 +41,16 @@ Miután már áttettük Java nyelvre, tegyük be egy Java Servletbe és a böng�
         <para>
             Tanulságok, tapasztalatok, magyarázat...
         </para>
-    </section>  
+    </section>        
+
 
     <section>
-        <title>„Gagyi”</title>
+        <title>Hibásan implementált RSA törése</title>
         <para>
-Az ismert formális
-„<![CDATA[
-while (x <= t && x >= t && t != x);
-]]>” tesztkérdéstípusra adj a szokásosnál
-(miszerint x, t az egyik esetben az objektum által hordozott érték, a másikban meg az objektum
-referenciája) „mélyebb” választ, írj Java példaprogramot mely egyszer végtelen ciklus, más x, t
-értékekkel meg nem! A példát építsd a JDK Integer.java forrására3
-, hogy a 128-nál inkluzív objektum
-példányokat poolozza!
-</para>
+		Készítsünk betű gyakoriság alapú törést egy hibásan implementált RSA kódoló:
+https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog2_3.pdf (71-73 fólia) által
+készített titkos szövegen.
+        </para>
         <para>
             Megoldás videó:
         </para>
@@ -70,15 +60,16 @@ példányokat poolozza!
         <para>
             Tanulságok, tapasztalatok, magyarázat...
         </para>
-    </section>  
+    </section>        
+
 
     <section>
-        <title>Yoda</title>
+        <title>Változó argumentumszámú ctor</title>
         <para>
-Írjunk olyan Java programot, ami java.lang.NullPointerEx-el leáll, ha nem követjük a Yoda
-conditions-t! https://en.wikipedia.org/wiki/Yoda_conditions
-</para>
-
+		Készítsünk olyan példát, amely egy képet tesz az alábbi projekt Perceptron osztályának bemenetére
+és a Perceptron ne egy értéket, hanem egy ugyanakkora méretű „képet” adjon vissza. (Lásd még a 4
+hét/Perceptron osztály feladatot is.)
+        </para>
         <para>
             Megoldás videó:
         </para>
@@ -88,15 +79,14 @@ conditions-t! https://en.wikipedia.org/wiki/Yoda_conditions
         <para>
             Tanulságok, tapasztalatok, magyarázat...
         </para>
-    </section>  
-    <section>
-        <title>Kódolás from scratch</title>
-        <para>
-Induljunk ki ebből a tudományos közleményből: http://crd-legacy.lbl.gov/~dhbailey/dhbpapers/bbpalg.pdf és csak ezt tanulmányozva írjuk meg Java nyelven a BBP algoritmus megvalósítását!
-Ha megakadsz, de csak végső esetben: https://www.tankonyvtar.hu/hu/tartalom/tkt/javat-tanitokjavat/apbs02.html#pi_jegyei (mert ha csak lemásolod, akkor pont az a fejlesztői élmény marad ki,
-melyet szeretném, ha átélnél).
-</para>
+    </section>        
 
+
+    <section>
+        <title>Összefoglaló</title>
+        <para>
+		Az előző 4 feladat egyikéről írj egy 1 oldalas bemutató „”esszé szöveget!
+        </para>
         <para>
             Megoldás videó:
         </para>
@@ -106,7 +96,8 @@ melyet szeretném, ha átélnél).
         <para>
             Tanulságok, tapasztalatok, magyarázat...
         </para>
-    </section>  	
+    </section>        
+   
         
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 </chapter>                

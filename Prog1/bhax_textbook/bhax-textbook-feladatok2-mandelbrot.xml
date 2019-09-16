@@ -1,0 +1,111 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Mandelbrot!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+
+    <section>
+        <title>Reverse engineering UML osztálydiagram</title>
+        <para>
+		UML osztálydiagram rajzolása az első védési C++ programhoz. Az osztálydiagramot a forrásokból
+generáljuk (pl. Argo UML, Umbrello, Eclipse UML) Mutassunk rá a kompozíció és aggregáció
+kapcsolatára a forráskódban és a diagramon, lásd még: https://youtu.be/Td_nlERlEOs.
+https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog1_6.pdf (28-32 fólia)
+
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section>        
+
+      <section>
+        <title>Forward engineering UML osztálydiagram</title>
+        <para>
+		UML-ben tervezzünk osztályokat és generáljunk belőle forrást!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section> 
+	    <section>
+        <title>Egy esettan</title>
+        <para>
+		A BME-s C++ tankönyv 14. fejezetét (427-444 elmélet, 445-469 az esettan) dolgozzuk fel!
+
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section> 
+	    <section>
+        <title>BPMN</title>
+        <para>
+		Rajzoljunk le egy tevékenységet BPMN-ben!
+https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog2_7.pdf (34-47 fólia)
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section> 
+	
+	    <section>
+        <title>BPEL Helló, Világ! - egy visszhang folyamat</title>
+        <para>
+		Egy visszhang folyamat megvalósítása az alábbi teljes „videó tutoriál” alapján:
+https://youtu.be/0OnlYWX2v_I
+
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section> 
+            <section>
+        <title>TeX UML</title>
+        <para>
+		Valamilyen TeX-es csomag felhasználásával készíts szép diagramokat az OOCWC projektről (pl.
+use case és class diagramokat).
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section> 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+</chapter>                

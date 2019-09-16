@@ -1,0 +1,141 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Chomsky!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+
+    <section>
+        <title>Encoding</title>
+        <para>
+		Fordítsuk le és futtassuk a Javat tanítok könyv MandelbrotHalmazNagyító.java forrását úgy, hogy a
+fájl nevekben és a forrásokban is meghagyjuk az ékezetes betűket!
+https://www.tankonyvtar.hu/hu/tartalom/tkt/javat-tanitok-javat/adatok.html
+
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section>        
+
+     <section>
+        <title>OOCWC lexer</title>
+        <para>
+		Izzítsuk be az OOCWC-t és vázoljuk a https://github.com/nbatfai/robocaremulator/blob/master/justine/rcemu/src/carlexer.ll lexert és kapcsolását a programunk OO
+struktúrájába!
+
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section> 
+    <section>
+        <title>l334d1c45</title>
+        <para>
+		Írj olyan OO Java vagy C++ osztályt, amely leet cipherként működik, azaz megvalósítja ezt a betű
+helyettesítést: https://simple.wikipedia.org/wiki/Leet (Ha ez első részben nem tetted meg, akkor írasd
+ki és magyarázd meg a használt struktúratömb memóriafoglalását!)
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section> 
+    <section>
+        <title>Full screen</title>
+        <para>
+		Készítsünk egy teljes képernyős Java programot!
+Tipp: https://www.tankonyvtar.hu/en/tartalom/tkt/javat-tanitok-javat/ch03.html#labirintus_jatek
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section>     
+	<section>
+        <title>Paszigráfia Rapszódia OpenGL full screen vizualizáció</title>
+        <para>
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section> 	
+	<section>
+        <title>Paszigráfia Rapszódia OpenGL full screen vizualizáció</title>
+        <para>
+		Lásd vis_prel_para.pdf! Apró módosításokat eszközölj benne, pl. színvilág, textúrázás, a szintek jobb
+elkülönítése, kézreállóbb irányítás.
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section> 
+	<section>
+        <title>Paszigráfia Rapszódia LuaLaTeX vizualizáció</title>
+        <para>
+Lásd vis_prel_para.pdf! Apró módosításokat eszközölj benne, pl. színvilág, még erősebb 3D-s hatás.
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section> 
+	<section>
+        <title>Perceptron osztály</title>
+        <para>
+Dolgozzuk be egy külön projektbe a projekt Perceptron osztályát!
+Lásd https://youtu.be/XpBnR31BRJY
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section> 	
+        
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+</chapter>                

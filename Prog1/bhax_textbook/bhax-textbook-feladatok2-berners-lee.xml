@@ -1,0 +1,99 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Bernes Lee</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+
+    <section>
+        <title>C++ és Java összehasonlítás</title>
+        <para>
+C++: Benedek Zoltán, Levendovszky Tihamér Szoftverfejlesztés C++ nyelven
+        </para>
+		<para>
+Java: Nyékyné Dr. Gaizler Judit et al. Java 2 útikalauz programozóknak 5.0 I-II
+		</para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+ java es a c/c++ talan korunk legmeghatarozobb program nyelvei . 
+A java c/c++ sokmindenben hasonlít egymásra és sokmindenben kulonbozik is. A javaban a biztonsagnak  nagyon nagy szerepe van
+emiatt sok helyen peldaul a biztonsagot nem pedig a gyorsasagot tarották szem előtt.
+Maga a java hírnevet eredetileg a WWW odalokon betoltott szerepenek köszönheti.	
+java egy platform és op.rendszer független nyelv . Nincsenek benne
+pointerek  illetve többszörös öröklés sem illetve velemenyem szerint sokkal objektumorientaltabb mint a c++ , a java nyelvet szoktak teljesen objektumorientaltnak is nevezni. 
+Ezzel ellentetben a c++ egy platformfüggő nyelv itt is beszélhetünk objektumorialtsagról de mégse olyan mertekben
+mint a java eseteben . Futasi szempontbol is vannak kulonbsegek ahogy mar fentebb említettem a c/c++ és a java között mivel a java a forráskódot a java virtualis gep önálló iterpreterkent fog ertelmezni.
+Ez biztonsagi szempontból előny viszont sebesség szempontjaból hátrány. A javaban egy konstans felvételéhez
+ a Final kulcsszóra van szuksegunk ezzel ellentetben a c++/cben a const szót kell alkalmaznunk. 
+Több dolog is van a c++ban mint peldaul a javaba ilyen peldaul az operátortulterheles ilyen a goto ami az ugrasokhoz fontos az utobbit foleg biztonsagi szempontból 
+nem hasznalja a java. Megjegyzeseket igazaból mindkét nyelvben hasznalhatunk ebben nincs eltérés. 
+a . Referencia szempontjaból hasonló a történet hiszen mind a c/c++ba mind a javaba van referencia 
+Mindkét nyelvben talalkozhatunk az alapvető változokkal ilyen peldaul char , short vagy az int. Ha a karakterkeszletet
+megnezzuk eleg nagy a kulonbség a java  hiszen a legtöbb nyelvel
+ellentetben nem 8bites rendszert hasznal tehat akar a magyart is hasznalhatjuk még a c/c++ba erre nincs lehetőség
+
+        </para>
+    </section>        
+
+    <section>
+        <title>Python</title>
+        <para>
+Python: Forstner Bertalan, Ekler Péter, Kelényi Imre: Bevezetés a mobilprogramozásba.
+Gyors prototípus-fejlesztés Python és Java nyelven (35-51 oldal), a kijelölt oldalakból élmény-olvasónapló
+        </para>
+		<para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+
+A python egy általános célú programozási nyelv . létrejöttét Guido Van Roussumnak köszönhetjük.
+Maga a nyelv 1990ben született meg , és azóta is töretlen sikerrel bír.
+A python maga egy viszonylag nepszeru nyelv hisz rengeteg kiváló tulajdonsággal rendelkezik . Ilyen peldaul
+az is hogy más nyelveken megírt modulokkal is kiválóan kepes együtt dolgozni,
+vagy nincs szükség fordítási fázisra hisz az értelmezőnek elegendő a Python forrását megadni .
+Kiemelném hogy a python legcelszerubb felhasznalasa az ha prototipusok vagy tesztelesi  esetekben 
+hasznaljuk. Hisz a legtobb nyelvel ellentetbe a hibakezelese es a hibak javítása egyszerubb.
+A nyelv szintaxisa behúzásos ami röviden azt takarja hogy a programba lévő állításokat az azonos szintu 
+behuzasokkal csoportosítjuk , tehat nem hasznaluk kulcsszavakat vagy egyeb eszkozoket. Egy resznek a veget egy kissebb
+behúzású sor jelzi . Fontos kiemelni hogy a sor első utasítása nem lehet behúzott.
+A nyelvben egy utasítás a sor végéig tart , ha tobb sorba szeretnek dolgozni a /-t kell hasznalnunk
+A ptyhonba beépített értemlező  a sorokat tokenekre bontja  ez lehet akar azonosító , kulcsszó operátor  delimiter , literál.
+a nyelven belul megkulonboztetjuk a kis es nagy betuket illetve a nyelv tartalmaz kulonbozo előrre lefoglalt 
+kulcsszavakat .  Ilyen peldaul az and , a break a a def es egy csomo másik szó is.
+A nyelvben minden adatot objektumokkal reprezentálnak . Az hogy egy adattal mifele muveletet 
+tudunk elvegezni a tipus hatarozza meg . Amely ebben a nyelvben adott , tehat automatikusan vegzi a nyelv .
+Maguk az adattipusok lehetnek szamok sztringek ,ennesek , listák és szótárak.
+A számok lehetnek akár egészek , komplexek decimálisok oktálisak es egyeb mások.
+A sztringeket idézőjelek , aposztrofok vagy az u betu segítségével tudjuk felvenni.A pythonban
+a valtozokat objektumok referenciajakent tudjuk értelmezni. értéket az = segítéségvel tudunk adni szamukra illetve
+a del segítéségvel vagyunk kepesek törölni őket. A nyelvben 2fele változót kulonboztetünk meg
+beszelhetünk globális es lokális változóról is . Ha a valtozot a függvényen belul vesszük fel akkor lokális változoként
+tekintünk rá ha kívül van es a global szót írjuk elé akkor természetesen globálisról beszélhetünk .
+A nyelv rengeteg eszközzel dolgozik . Ilyen eszköz például a print amivel kiiratni tudunk , ilyen eszköz az elágazás amit az 
+if segítségével tudunk hasznalni. A nyelvben hasznalhatunk különféle  ciklusokat is természetes .
+A nyelvben továbbá találkozhatunk cimkékkel és ugrásokkal a cimkeket a label kulcsóval helyezhetünk el és a gotoval pedig
+ugorhatunk rájuk. A python továbbá támogatja a függvények hasznalatat is amelyeket a def
+kulcsszóva definialhatunk   .  Osztály és objektum szempontjából a python a megszokott objektumorientáltságot támogatja
+Tehat az osztalyok lehetnek atríbutumok tehat objektumok fuggvenyek. Az osztályok 
+kepesek mas osztalyból is örökölni. Modulok szempontjából a Python viszonylag sok
+szabványos modult tartalmaz . Ezek peldaul a mobilokhoz törtenő fejlesztések megkönnyítése
+miatt fontosak ilyenek peldaul a halózat vagy a kamera kezelés. Ha a kivételkezelés
+szempontjából nézzük meg a pythont akkor egy egyszeru megoldást találhatunk.
+A nyelvben a try kulcsszó után lévő részben kell lennie a tesztelni kivant resznek
+illetve a resz utan az expect kulcsszónak kell kerülnie . Erdemes az else agat is hasznalni
+ illetve a a finally kulcsszót is hasznalhatjuk a kivételkezelesnel. 
+
+        </para>
+    </section>  
+        
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+</chapter>                
