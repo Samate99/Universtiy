@@ -32,7 +32,7 @@ a w nagyobb mint 1 . Majd ezutan egy muvelet segítéségvel létrehozzuk az r-t
 a V2vel majd eltaroljuk. Miutan van már tartolt ertekünk visszaadjuk az r szorozva v1 értéket.
         </para>
         
-         <para>
+        
  <programlisting language="c"><![CDATA[
 import java.util.Random;
 import java.io.*;
@@ -96,7 +96,7 @@ C++ valtozat
         </para>
         
         
-       <para>  
+      
        
  <programlisting language="c"><![CDATA[       
 #include<cmath>
@@ -160,11 +160,8 @@ int main(int argc, char** argv) {
     return 0;
 }
 }]]></programlisting> 
-</para>
 
 
-
-</para>
 
     </section>        
 
