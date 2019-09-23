@@ -24,8 +24,148 @@ Ugyanezt írjuk meg C++ nyelven is! (lásd még UDPROG repó: source/labor/polar
             Megoldás forrása:                
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+A programunk ugy mukodik hogy megnezi hogy van e előrre már tárolt értékünk . Ha nincs számunk akkor akkor keszít szamunkra.
+Tehat a program generált 2 szamot a megadott értékek között ez lesz a kódban az 
+u1 és az u2 .Kulonbozo muveletek segítéségével  létrehozza V1et és V2ot . Majd Mindkettőt megszorozza 
+önmagával és összeadja őket így létrehozza a w-t . Ez a ciklus addig ismétlődik még
+a w nagyobb mint 1 . Majd ezutan egy muvelet segítéségvel létrehozzuk az r-t es ezt az r-t megszorozzuk
+a V2vel majd eltaroljuk. Miutan van már tartolt ertekünk visszaadjuk az r szorozva v1 értéket.
         </para>
+        
+         <para>
+ <programlisting language="c"><![CDATA[
+import java.util.Random;
+import java.io.*;
+import java.lang.Math;
+
+public class PolarGen	{
+
+  public final  static int RAND_MAX = 32767;
+  private static boolean bExists;
+  private double dValue;
+
+  static Random cRandomGenerator = new Random();
+
+  public PolarGen() { 		
+
+	bExists = false;
+	cRandomGenerator.setSeed(20); 	
+  };
+
+  public double PolarGet()	{
+
+    	if (!bExists)
+  {
+		double u1, u2, v1, v2, w;
+		
+		do{
+
+			u1 = cRandomGenerator.nextInt (RAND_MAX) / (RAND_MAX + 1.0); 
+			u2 = cRandomGenerator.nextInt (RAND_MAX) / (RAND_MAX + 1.0);
+			v1 = 2 * u1 - 1;
+			v2 = 2 * u2 - 1;
+			w = v1 * v1 + v2 * v2;
+		    }
+		    
+		while (w > 1);
+		double r = Math.sqrt ((-2 * Math.log (w)) / w);
+		dValue = r * v2; 
+		bExists = !bExists;
+		return r * v1; 
+	}
+	else
+
+	{
+		bExists = !bExists; 
+		return dValue;
+
+	}
+
+  };    
+
+  public static void main(String args[])	{
+    PolarGen cPolarGen = new PolarGen();
+    double  dEredmeny = cPolarGen.PolarGet();
+    System.out.println(dEredmeny);
+  }
+
+}]]></programlisting> 
+
+        <para>
+C++ valtozat
+        </para>
+        
+        
+       <para>  
+       
+ <programlisting language="c"><![CDATA[       
+#include<cmath>
+#include <cstdlib>
+#include<ctime>
+
+using namespace std;
+
+
+class PolarGen {
+
+public:
+    PolarGen (){
+        nincsTarolt = true;
+        srand (time (NULL));
+    }
+
+    ~PolarGen(){
+    }
+
+    double kovetkezo ();
+
+
+private:
+
+    bool nincsTarolt;
+    double tarolt;
+
+};
+
+double PolarGen::kovetkezo() {
+
+    if (nincsTarolt) {
+        double u1, u2, v1, v2, w;
+        do {
+            u1 = rand() / (RAND_MAX + 1.0);
+            u2 = rand() / (RAND_MAX + 1.0);
+            v1 = 2 * u1 - 1;
+            v2 = 2 * u2 -1;
+            w = v1 * v1 + v2 * v2;
+
+        } while ( w > 1);
+        double r = sqrt ((-2* log(w) / w));
+        tarolt = r * v2;
+        nincsTarolt = !nincsTarolt;
+
+        return r * v1;
+
+   }
+    else {
+        nincsTarolt = !nincsTarolt;
+      return tarolt;
+    }
+
+}
+
+int main(int argc, char** argv) {
+    PolarGen pg;
+    for (int i = 0; i < 10; i++)
+        std::cout<<pg.kovetkezo()<<std::endl;
+    return 0;
+}
+}]]></programlisting> 
+</para>
+
+
+
+</para>
+
     </section>        
 
     <section>
@@ -36,15 +176,18 @@ Mutassunk rá, hogy gyakorlatilag a pointereket és referenciákat kell kiirtani
 (erre utal a feladat neve, hogy Java-ban minden referencia, nincs választás, hogy mondjuk egy
 attribútum pointer, referencia vagy tagként tartalmazott legyen).
 Miután már áttettük Java nyelvre, tegyük be egy Java Servletbe és a böngészőből GET-es kéréssel
-(például a böngésző címsorából) kapja meg azt a mintát, amelynek kiszámolja az LZW binfáját!        </para>
+(például a böngésző címsorából) kapja meg azt a mintát, amelynek kiszámolja az LZW binfáját!        
+</para>
         <para>
             Megoldás videó:
         </para>
         <para>
-            Megoldás forrása:                
+            Megoldás forrása:  <link xlink:href='https://github.com/Samate99/Hello-world/blob/master/LZWBinFa.java'>https://github.com/Samate99/Hello-world/blob/master/LZWBinFa.java</link>               
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+A feladatunk hogy átírjuk a binfát javará
+Gyakorlatilag át kell írnunk  c kódban szereplő pointereket illetve referenciákat 
+javas referenciara  illetve át kell írnunk java szintaxisnak megfelelőre . 
         </para>
     </section>  
 
@@ -65,11 +208,51 @@ példányokat poolozza!
             Megoldás videó:
         </para>
         <para>
-            Megoldás forrása:                
+            Megoldás forrása:   
+            
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+            A szöveg alatt láthatunk 2 darab kódot láthatunk . Amelyekben csak 2 érték az x, és a t különbözük . 
+            Az első esetben láthatjuk hogy az x és a t érték jóval nagyobb mint a masodik esetben. A két szám nagyobb értéke miatt
+            ebben az esetben a ciklus feltétele igaz lesz ez pedig előidézi szamunkra a végtelen ciklust. 
+            Ez a folyamat  alap  integer osztálynak köszönhető ami alapból -128-tól 128ig tart.Mivel ez a 2 érték kívül esik az adott tartományon emiatt 
+            a ciklus feltétele igaz lesz. Ezzel szemben ha  adott 2 szám bennevan ebben az osztályban mint ahogy látható a második esetben
+            akkor természetesen a  a ciklusunk feltétele hamis lesz es így nem jön létre egy végtelen ciklus.
         </para>
+<para>
+  <programlisting language="c"><![CDATA[    
+    public class gagyi {
+      public static void main(String args[]){
+ Integer x = 500;
+ Integer t = 500; 
+ System.out.print("A "+ "ciklus "+"kezdete\n"); 
+ while(x<=t && x>=t && x!=t) 
+{} 
+System.out.println("A cilus vége");
+}
+]]></programlisting> 
+
+</para>
+
+
+<para>
+    <programlisting language="c"><![CDATA[    
+ public class gagyi {
+public static void main(String args[])
+{
+Integer x = -128; 
+Integer t = -128;
+System.out.print("A "+ "ciklus "+"kezdete\n"); 
+while(x<=t && x>=t && x!=t)
+{} 
+System.out.println("A cilus vége");
+} 
+}]]></programlisting> 
+
+</para>
+
+
+
     </section>  
 
     <section>
@@ -86,10 +269,43 @@ conditions-t! https://en.wikipedia.org/wiki/Yoda_conditions
             Megoldás forrása:                
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+A yoda conditions alatt egy megfordított összehasonlítást értünk . Tehat alap esetben
+a valtozot hasonlítjuk valamihez peldaul hasonlítjuk egy ertekhez. Ezzel szemben
+itt a valtozohoz hasonlítunk. Igazaból programozási szempontból ez a felcsereles nem fontos hisz
+mindkét esetben a megfelelő eredmenyt kapjuk vissza.
+A feladatunk a java.lang.Nullpointer.ex hiba előhozása. Ez a hiba gyakorlatilag
+akkor keletkezik amikor egy olyan valtozót hasonlítunk 
+amelynek az értéke Null. Tehat a feladatunk hogy a valtozo értéke null legyen
+. Ilyen peldaul a szöveg alatti kód is ahol a masodik IF sorában hozzuk elő a hibát.
+Ahogy lathatjuk itt a valtozonk értéke null emiatt egy futtatás utan egyszeruen megkapjuk a hibat.
+
         </para>
+        
+ <para> 
+ <programlisting language="c"><![CDATA[ 
+public class Yoda {
+
+    public static void main(String[] args) {    
+    String text = null;
+
+      if ("text".equals(textext)) {
+      }
+      System.out.println("text".equals(text));
+
+      textext = null;
+      if (text.equals("text")) {
+      }
+      System.out.println("text".equals(text));
+
+    }
+}
+}]]></programlisting> 
+
+ </para>   
+ 
     </section>  
     <section>
+        
         <title>Kódolás from scratch</title>
         <para>
 Induljunk ki ebből a tudományos közleményből: http://crd-legacy.lbl.gov/~dhbailey/dhbpapers/bbpalg.pdf és csak ezt tanulmányozva írjuk meg Java nyelven a BBP algoritmus megvalósítását!
@@ -104,8 +320,82 @@ melyet szeretném, ha átélnél).
             Megoldás forrása:                
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+A BBP algoritmus ki nem talalnak a BBP formulát hasznalja
+melyet Simon Plouffe nevéhez köthetünk . Maga az algoritmus
+a Pi számjegyeinek meghatarozására hasznaljak .
         </para>
+        
+        
+ <para>
+         package bpp;
+
+
+ <programlisting language="c"><![CDATA[ 
+
+ * PiBBP.java
+
+public class PiBBP {
+    public PiBBP(int d) {
+
+    
+        double d16Pi = 0.0d;
+        double d16S1t = d16Sj(d, 1);
+        double d16S4t = d16Sj(d, 4);
+        double d16S5t = d16Sj(d, 5);
+        double d16S6t = d16Sj(d, 6);
+
+        d16Pi = 4.0d*d16S1t - 2.0d*d16S4t - d16S5t - d16S6t;
+        d16Pi = d16Pi - StrictMath.floor(d16Pi);
+
+        StringBuffer sb = new StringBuffer();
+        Character hexaJegyek[] = {'A', 'B', 'C', 'D', 'E', 'F'};
+    
+        while(d16Pi != 0.0d) {
+            int jegy = (int)StrictMath.floor(16.0d*d16Pi);
+            if(jegy<10)
+                sb.append(jegy);
+            else
+               sb.append(hexaJegyek[jegy-10]);
+            d16Pi = (16.0d*d16Pi) - StrictMath.floor(16.0d*d16Pi);
+        }
+        d16PiHexaJegyek = sb.toString();
+ }
+    public double d16Sj(int d, int j) {
+
+        double d16Sj = 0.0d;
+        for(int k=0; k<=d; ++k)
+            d16Sj += (double)n16modk(d-k, 8*k + j) / (double)(8*k + j);
+        return d16Sj - StrictMath.floor(d16Sj);
+    }
+    public long n16modk(int n, int k) {
+      int t = 1;
+        while(t <= n)
+            t *= 2;
+        long r = 1;
+        while(true) {
+            if(n >= t) {
+                r = (16*r) % k;
+                n = n - t;
+            }
+            t = t/2;
+           if(t < 1)
+                break;
+            r = (r*r) % k;
+        }
+        return r;
+    }
+    public String toString() {
+        return d16PiHexaJegyek;
+
+    }
+    public static void main(String args[]) {        
+        System.out.print(new PiBBP(1000000));
+    }
+
+}
+}]]></programlisting> 
+     </para>
+     
     </section>  	
         
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
