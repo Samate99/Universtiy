@@ -21,13 +21,71 @@ https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog2_1.pdf (93-99 
             Megoldás forrása:                
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+Tutor : Veress Máté
         </para>
+        <para>
+            Tehat maga a liskov helyettesítési elv vagy röviden csak LSP a S.O.L.I.D elvek talan legerdekesebb tagja.
+Ma az S.O.L.I.D Robert C. Martin nevéhez  fűződik aki a clean code egyik vezéralakja.
+Maga az elv lenyege hogy minden alap osztály legyen helyettesíthatő azt alt azaz a leszármazott osztályával (öröklödés).Tehat
+ha peldaul nem valt ki semmitse az alap osztály akkor azt alt osztály se valtson ki semmit vagyis a program mukodese nem valtozik.
+Ez azert fontos mert azalltal minden olyan helyre ahol az alap osztály hasznalható az alt osztály is hasznhalható.
+A feladatunk hogy készítsünk egy olyan programot amely sérti a liskov elvet.
+Tehat ahogy a kódban lathatjuk van egy Madarak osztalyunk. Az osztály rendelkezik egy repülés nevű funkcióval.
+létrehozunk még 2 alosztályt .  Ezek a sas illetve a pingvin nevet viselik.
+Ahogy lathatjuk mindkét alosztály örökli a repules()-t. Ezzel nem is lenne baj ha csak a sast nezzuk viszont 
+ha mar a pingvint nezzuk akkor igen. Emiatt logikailag a programunk nem mukodik megfelelően.
+        </para>
+        
+         <programlisting language="c"><![CDATA[
+#include <stdio.h>
+class Madarak { 
+          public: 
+         char repules() { printf("Repülök\n"); }; 
+};
+class Sas : public Madarak {}; 
+class Pingvin : public Madarak {};
+int main() 
+{ Sas sas;
+ Pingvin pingvin; 
+sas.repules(); 
+pingvin.repules(); }
+
+}]]></programlisting>
+
+
+<para> 
+Ezert kell letrehoznunk egy uj alosztályt a madarakon belul a repulomadarak osztalyat . Majd ezt az osztályt kell ellatnunk
+a repules funkcioval. Ezalltal kepesek vagyunk arra hogy a sas rendelekzzenk repules() funkcioval de a pingvin nem.
+</para>
+
+         <programlisting language="c"><![CDATA[
+include <stdio.h>
+class Madarak {
+};
+class RepuloMadarak : public Madarak {
+ public: 
+char repules() { printf("Repülök\n"); };
+ } 
+class Sas : public RepuloMadarak {}; 
+class Pingvin : public Madarak {};
+
+int main() { Sas sas; 
+Pingvin pingvin; 
+sas.repules(); 
+pingvin.repules(); }
+
+}]]></programlisting>
+
+<para>
+    így a programunk logikai szempontbol tokeletes . Viszont hibát fogunk kapni mivel a pingvin osztálynak nincs repules funckioja.
+
+</para>
+
     </section>
        <section>
         <title>Szülő-gyerek</title>
         <para>
-rjunk Szülő-gyerek Java és C++ osztálydefiníciót, amelyben demonstrálni tudjuk, hogy az ősön
+irjunk Szülő-gyerek Java és C++ osztálydefiníciót, amelyben demonstrálni tudjuk, hogy az ősön
 keresztül csak az ős üzenetei küldhetőek!
 https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog2_1.pdf (98. fólia)4
         </para>
@@ -37,9 +95,72 @@ https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog2_1.pdf (98. f�
         <para>
             Megoldás forrása:                
         </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
+                <para>
+Tutor : Veress Máté
         </para>
+        <para>
+ Tehat nezzuk meg a programunk.  Lathatjuk hogy rendelkezunk egy teglalap nevű osztállyal amely rendelkezik egy meret nevu funkcioval
+a meret tartalmaz értékekekt , ezek nem masak mint szelesség és a magassag . Láthatjuk hogy a teglalap osztály rendelkezik egy alosztállyal ami a negyzet nevet viseli.
+ez az alosztály rendelkezik egy terület nevű függvénnyel. A program futtatása során
+hibát tapasztalhatunk ez a "teglalap.terulet()" köszönhető . Mivel a teglalap osztály nem rendelkezik terület függvénnyel csak a negyzet nevű alosztálya.
+        </para>
+        
+        
+        <para>
+            C++
+        </para>
+                 <programlisting language="c"><![CDATA[
+#include <stdio.h>
+class Teglalap { 
+public: int meret()
+ { int height, width; 
+int meret[2] = {height, width}; 
+return meret[2]; } };
+
+class Negyzet : public Teglalap {
+
+public: 
+int terulet(int height, int width)
+{ return height*width; }
+};
+int main() { 
+Teglalap teglalap;
+Negyzet negyzet; 
+negyzet.meret(); 
+printf("%d",negyzet.terulet(10,14)); 
+teglalap.meret(); 
+teglalap.terulet();
+}
+]]></programlisting>
+
+
+
+ <para>
+     Java
+ </para>
+ 
+ <programlisting language="c"><![CDATA[
+ class Teglalap { 
+private int height; 
+private int width;
+
+public int meret() {
+ int[] meret = new int[]{height, width}; 
+return meret[1]; }
+}
+class Negyzet extends Teglalap {
+ public int terulet(int height, int width){ 
+return height * width; } }
+
+public class Main { 
+public static void main(String[] args) 
+{ Teglalap teglalap = new Teglalap();
+ Negyzet negyzet = new Negyzet();
+ System.out.println(negyzet.terulet(1,1));
+ System.out.println(teglalap.terulet(1,1));//itt a hiba } }
+ 
+ ]]></programlisting>
+
     </section>
 	<section>
         <title>Anti OO</title>
@@ -56,8 +177,137 @@ https://www.tankonyvtar.hu/hu/tartalom/tkt/javat-tanitok-javat/apas03.html#id561
             Megoldás forrása:                
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
+A feladatunk nem mas mint az elozo csokorbol mar megismert BBP alogirtmus hasznalata.
+A PI-nek kell a 10^6 10^7 10^8 darab jegyet kiszamolnunk illetve meg kell mernunk hogy melyik nyelv ( C , C++ , Java ,  C# mekkora )
+sebességgek képes kiszámolni a szamjegyeket. 
+A program mukodes szempontjabol ugy nez ki hogy a cikluson belul talalhato D valtozot átírva tudjuk a megvaltoztatni hogy 
+meddig írja ki a PI szamjegyeit. Minnel több nulla kerül utana annál több számjegyet fog szamunkra kiirni. Amint lefuttatuk a
+programot több eredmennyel lehetunk gazdagabbak . Nekunk a masodik ertekre van szükségünk amely nem mas mint a mérési idő.
+</para>
+ <programlisting language="c"><![CDATA[
+
+ /*
+ * PiBBPBench.java
+ *
+ * DIGIT 2005, Javat tanítok
+ * Bátfai Norbert, nbatfai@inf.unideb.hu
+ */
+/**
+ * A PiBBP.java-ból kivettük az "objektumorientáltságot", így kaptuk
+ * ezt az osztályt.
+ *
+ * (A PiBBP osztály a BBP (Bailey-Borwein-Plouffe) algoritmust a Pi hexa
+ * jegyeinek számolását végző osztály. A könnyebb olvahatóság
+ * kedvéért a változó és metódus neveket megpróbáltuk az algoritmust
+ * bemutató [BBP ALGORITMUS] David H. Bailey: The BBP Algorithm for Pi.
+ * cikk jelöléseihez.)
+ *
+ * @author Bátfai Norbert, nbatfai@inf.unideb.hu
+ * @version 0.0.1
+ */
+
+public class PiBBPBench {
+
+    /**
+
+     * BBP algoritmus a Pi-hez, a [BBP ALGORITMUS] David H. Bailey: The
+     * BBP Algorithm for Pi. alapján a {16^d Sj} részlet kiszámítása.
+     *
+     * @param   d   a d+1. hexa jegytől számoljuk a hexa jegyeket
+     * @param   j   Sj indexe
+     */
+    public static double d16Sj(int d, int j) {
+        double d16Sj = 0.0d;
+        for(int k=0; k<=d; ++k)
+
+            d16Sj += (double)n16modk(d-k, 8*k + j) / (double)(8*k + j);
+        /* (bekapcsolva a sorozat elejen az első utáni jegyekben növeli pl.
+            a pontosságot.)
+        for(int k=d+1; k<=2*d; ++k)
+            d16Sj += Math.pow(16.0d, d-k) / (double)(8*k + j);
+         */
+        return d16Sj - Math.floor(d16Sj);
+    }
+    /**
+     * Bináris hatványozás mod k, a 16^n mod k kiszámítása.
+     *
+     * @param   n   kitevő
+     * @param   k   modulus
+     */
+    public static long n16modk(int n, int k) {
+
+        int t = 1;
+        while(t <= n)
+            t *= 2;
+        long r = 1;
+        
+        while(true) {
+            
+            if(n >= t) {
+                r = (16*r) % k;
+                n = n - t;
+            }
+            t = t/2;
+            if(t < 1)
+
+                break;
+            r = (r*r) % k;
+        }
+
+        return r;
+    }
+
+    /**
+     * A [BBP ALGORITMUS] David H. Bailey: The
+     * BBP Algorithm for Pi. alapján a
+     * {16^d Pi} = {4*{16^d S1} - 2*{16^d S4} - {16^d S5} - {16^d S6}}
+     * kiszámítása, a {} a törtrészt jelöli. A Pi hexa kifejtésében a
+     * d+1. hexa jegytől
+     */
+
+    public static void main(String args[]) {
+
+        double d16Pi = 0.0d;
+        double d16S1t = 0.0d;
+        double d16S4t = 0.0d;
+        double d16S5t = 0.0d;
+        double d16S6t = 0.0d;
+        
+        int jegy = 0;
+
+        long delta = System.currentTimeMillis();
+
+        for(int d=1000000; d<1000001; ++d) {
+
+
+            d16Pi = 0.0d;
+            d16S1t = d16Sj(d, 1);
+            d16S4t = d16Sj(d, 4);
+            d16S5t = d16Sj(d, 5);
+            d16S6t = d16Sj(d, 6);
+
+            d16Pi = 4.0d*d16S1t - 2.0d*d16S4t - d16S5t - d16S6t;
+
+            d16Pi = d16Pi - Math.floor(d16Pi);
+            jegy = (int)Math.floor(16.0d*d16Pi);
+
+            
+        }
+
+        System.out.println(jegy);
+        delta = System.currentTimeMillis() - delta;
+        System.out.println(delta/1000.0);
+    }
+} 
+ ]]></programlisting>
+
+<para>
+    Ha összehasonlítjuk a futasi idoket . Lathatjuk hogy gyakorlatilag a java a leggyorsabb illetve hogy a c++ és c 
+eleg közeli futasi idoket produkal.
+
+</para>
+
+        
     </section>
 	<section>
         <title>deprecated - Hello, Android!</title>
@@ -90,8 +340,47 @@ Apró módosításokat eszközölj benne, pl. színvilág.
             Megoldás forrása:                
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+            SMNIST egy olyan progam amelyben pontok jelennek meg a 1000ms-enként kepernyőn es az a feladatunk hogy a pontok mennyiségének megfelelő számot 
+nyomjuk meg. Természetesen mindezt egy adott időn belul kell megtennünk . A sebességünket a program természetesen megmutaja ms pontosággal.
+Amint a pontok számával a háttér színe is megvaltozik. A programban több szintent kuloníthetünk el . Ez amiatt fontos mert minnel nagyobb a szintunk annál több pont
+kerül a kepernyőre tehat annal nehezebb értelmezünk .
+A feladatunk hogy a programban egy apró változtatást vigyünk véghet peldaul en ebben az esetben a színét valtoztatom meg.
+Ahogy lathatjuk alapból van egy belső és 9 kös kör . A nagy kör színe szürke ebben fekete pontok jelennek. A kis körök sárgák és bennük a számok szürkén jelennek
+meg . Az SMNIST.SURFACE.view.java-t megnezve
+a 354. sorban talalhatjuk a szinekért felelős részt
+Tehat az egesz 4 kisebb részre van szedve.
+Ezekben tudjuk allitani a programban szereplo szineket , at tudjuk írni a pontok a körök vagy akar a szamok szinet is
+ahogy lathatjuk a meretuket és az elhelyezkedesuket is tudjuk alakítani
         </para>
+        
+         <programlisting language="c"><![CDATA[
+ private void cinit(android.content.Context context) {
+
+        textPaint.setColor(android.graphics.Color.YELLOW);
+        textPaint.setStyle(android.graphics.Paint.Style.FILL_AND_STROKE);
+        textPaint.setAntiAlias(true);
+        textPaint.setTextAlign(android.graphics.Paint.Align.CENTER);
+        textPaint.setTextSize(50);
+
+        msgPaint.setColor(android.graphics.Color.YELLOW);
+        msgPaint.setStyle(android.graphics.Paint.Style.FILL_AND_STROKE);
+        msgPaint.setAntiAlias(true);
+        msgPaint.setTextAlign(android.graphics.Paint.Align.LEFT);
+        msgPaint.setTextSize(40);
+
+        dotPaint.setColor(android.graphics.Color.YELLOW);
+        dotPaint.setStyle(android.graphics.Paint.Style.FILL_AND_STROKE);
+        dotPaint.setAntiAlias(true);
+        dotPaint.setTextAlign(android.graphics.Paint.Align.CENTER);
+        dotPaint.setTextSize(50);
+
+        borderPaint.setStrokeWidth(2);
+        borderPaint.setColor(android.graphics.Color.YELLOW);
+        fillPaint.setStyle(android.graphics.Paint.Style.FILL);
+        fillPaint.setColor(android.graphics.Color.YELLOW);
+
+ ]]></programlisting>
+        
     </section>
 	<section>
         <title>Hello, SMNIST for Humans!</title>
@@ -123,7 +412,9 @@ fóliát)!
             Megoldás forrása:                
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+Tehat a ciklomatikus komplexitás egy szoftvermetrika . Maga a szoftvermetrikat egy olyan módszer amlyekkel kulonboző szoftverketet mérnek.
+Magat a ciklometikus komplexitást első megjelenése 1976-ban törtent. Ebben az évben publikálta Thomas J	 McCabe. Emiatt sok helyen McCabe konvexitás
+néven talalhatjuk meg . A mérés után komplexitást egy számként kapjuk vissza. Amelyet a a forráskódban szerelpő megfelelő adatok alapjan szamol ki.
         </para>
     </section>
         
