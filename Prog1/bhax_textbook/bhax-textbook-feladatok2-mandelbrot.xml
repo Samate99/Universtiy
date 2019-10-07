@@ -22,7 +22,27 @@ https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog1_6.pdf (28-32 
             Megoldás forrása:                
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+Tehat a Helló, Mandelbrot csokrunk első feladata nem máshoz mint az első védési programunkhoz
+azaz a LZWbinfa c++os verziojahoz kotheto. Feladtunk hogy egy ugynevett UML Diagramot keszítsünk
+a binfaból. Az UML azaz a Unidified modeling language rövidítése . Az UML egy alltanaos célú
+modellező nyelv amelyet széles körben hasznalnak . Peldaul uzleti elemzők rendszertervezők 
+és szoftvermérnökök is.Az UML alkalmas programrendszerek vizualis megvalósítására.
+A feladat megoldásához az Umbrella nevezetű programot hasznaltam.
+Itt nincs is mas dolgunk mint hogy beimportaljuk a forrást .Ezt a Code , Code Importing Wizard
+menu segítségével tehetjuk meg.  Ebből a programunk el is keszíti
+szamunkra a diagramot Semmifele valtoztatast nem kell csinalnunkk.
+ Az importálás után az alul latható sárga négyszöget kapunk.
+        </para>
+        
+        <para>
+            <figure>
+            <title>  Forrás : Sajat kep </title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="veres/Lzwbinfa.png" scale="70"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
         </para>
     </section>        
 
@@ -38,7 +58,51 @@ https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog1_6.pdf (28-32 
             Megoldás forrása:                
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+A masodik feladatban . Az előzőhez hasonloan az UML osztálydiagrammokkal kell foglalkoznunk.
+Viszont itt az előzővel ellentetben meg kell fordítanunk a folyamatot . Tehat itt az UML diagrammbol
+kell letrehoznunk egy forráskódot. Letrekel hoznunk egy uj classt egy ures sarga negyszoget.
+Ezen belul tudunk letrehozni kulonbozo dolgokat. En szemely szerint letrehoztam a ProgClasst 
+ahol felvettem 3 valtozot 
+
+Ebbol tudunk forrást generalni ezt egyszeruen az elozohez hasonló helyen tehetjuk meg a Code  Code
+Generation Wizard helyen tudjuk itt ki kell valasztanunk hogy hova mentsen illtve ki kell valasztanunk
+a nyelvet.
+Ha ezt legeneraljuk 2 fajlt kapunk egy headert(.h) es egy forrás (.cpp)fajlt . Termeszetesn c++ nyelven
+
+A diagramrol es a forráskódrol a szöveg alatt lathatunk kepeket.
+        </para>
+        
+        <para>
+            <figure>
+            <title>  Forrás : Sajat kep </title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="veres/progclass.png" scale="70"/>
+                    
+                </imageobject>
+            </mediaobject>
+        </figure>
+        </para>
+        <para>
+                    <programlisting language="c"><![CDATA[
+#include "ProgClass.h"
+// Constructors/Destructors
+//  
+ProgClass::ProgClass () {
+initAttributes();
+}
+ProgClass::~ProgClass () { }
+//  
+// Methods
+//  
+// Accessor methods
+//  
+
+// Other methods
+//  
+void ProgClass::initAttributes () {
+}
+]]></programlisting>
         </para>
     </section> 
 	    <section>
@@ -70,8 +134,29 @@ https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog2_7.pdf (34-47 
             Megoldás forrása:                
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+A feladatunk hogy lerajzoljunk egy BPMN Tevékenységet. Amely nem mas mint egy adott folyamat  grafikus ábrázolás.
+Ahogy a nevéből "Business Process Model and Notation " ered alltalaban uzlet folyamatok , modellek abrazolására
+hasznalják.
+a Rajzot a draw.iot hasznalva keszítettem. Itt könnnyen lehet BPMN szeruen abrazolni.
+Itt van egy alap kezdes a faradsag erre tortenik egy folyamat
+az hogy "Elmenni aludni" . Ezutan kovetkezik egy ellenőrzés 
+nyilvan ha felkeltunk kiderül hogy sikerült e kialudnunk magunkat . Itt ketté válik a történet de akár válhatna több fele is
+Tehat a faradtak vagyunk azaz igaz a feltelel akkor visszafekszünk pihenni ez mindaddig tortenik még a feltelel hamis nem lesz
+ha hamis leszt azaz nem leszunk faradtak akkor elmegyunk mast csinalni 
+
         </para>
+        
+        <para>
+            <figure>
+            <title>  Forrás : Sajat kep </title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="veres/BMN.png" scale="70"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        </para>
+        
     </section> 
 	
 	    <section>
