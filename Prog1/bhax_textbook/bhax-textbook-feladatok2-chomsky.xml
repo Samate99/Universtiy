@@ -21,7 +21,13 @@ https://www.tankonyvtar.hu/hu/tartalom/tkt/javat-tanitok-javat/adatok.html
             Megoldás forrása:                
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+            A javaban a C++/C-vel ellentetben van lehetőségünk ekezetes betuk hasznalatara . A java nyelv egyik nagy előnye hogy 
+jóval több karakterkészletet képes kezelni . Ezalltal a mi magyar betuinkat is siman hasznalhatjuk , gond nelkul hasznalhatjuk.
+A mandelbrot halmaz is magyar karakterkészletet felhasznalva készült ezálltal a fordítás során hibát tapasztalhatunk.
+A jelen esetben az ISO-8859-2es karakterkeszletet kell hasznalnunk hogy a fordítás sikeres legyen ehez nincs mas dolgunk mint az 
+-encoding kapcsolo hasznalata. ezzel tudjuk beallítani hogy milyen karakterkeszletet hasznaljunk. A program ugyanaz
+mint a prog1en mar megismert program . Tehat kapun k egy mandelbrot halmazt amelyben az eger segítéségvel tudunk részeket kijelolnni
+illetve ezeket a kijelölt részeket nagyítani.
         </para>
     </section>        
 
@@ -102,8 +108,35 @@ elkülönítése, kézreállóbb irányítás.
             Megoldás forrása:                
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+A feladatunkban paszgrafiai rapszódia , vagyis az ugynevezett PaRaval fogunk foglalkozni ez nem mas mint egy mesterséges nyelv 
+kialakítására törekvő kezdeményezés . Celjanem mas mint a homunkulusz és a mesterséges homunkulusz közötti kapcsolat.A
+ programban a para vizualizacios lehetőségeit nezzuk meg. A program az SMNISThez hasonloan  pöttyökkel dolgozunk
+csak itt eppen nem a szamosaggon hanem a "pöttyök" elhelyezkedésén van a hangsúly ! A programban kulonbozo forgatható kockakkal
+es ezekben elhelyezkedő négyzetekkel fogunk dolgozni. 
+A mi feladatunk hogy ezeket alakítsuk at kicsit.
+Peldaul ahoz hogy az ablakunk meretet noveljuk a  w és a h valtozo értéket kell átírnunk.
+Szineket a 3 alapszinből tudunk generalni tehat a piros kék zöld szinekből tudunk letrehozni.
+A billentyuzet gombajait pedig a keyboard reszben tudjuk atalakítani
         </para>
+        <para>
+              <programlisting language="c"><![CDATA[
+
+  glColor3f ( 0.188f, 0.209f, 0.190f );
+]]></programlisting>
+
+
+        </para>
+        
+         <para>
+              <programlisting language="c"><![CDATA[
+int w = 1920; 
+int h = 1080;
+
+]]></programlisting>
+
+
+        </para>
+        
     </section> 
 	<section>
         <title>Paszigráfia Rapszódia LuaLaTeX vizualizáció</title>
@@ -133,8 +166,52 @@ Lásd https://youtu.be/XpBnR31BRJY
             Megoldás forrása:                
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+ Ebben a feladatban a perceptron osztállyal fogunk dolgozni . A feladat szoros
+osszefuggesben van a mandelbrot halmazzal hiszelsőnek
+a mandelbort programunk segítségével kell létrehoznunk egy mandelbort halmazt 
+abrazolo kepet . Fontos kiemelni hogy a kepnek PNG formatumunak kell lennie .
+így az elejen kiemelnem hogy a Mandelbrot halmaz Benoit Mandelbrot lengyel szarmazasu
+Francia-Amerika matematikus  nevéhez kothető. A mandelbrot halmazt ő emelte a koztudatba
+ezert is kapta róla a nevet. A program megfelelő futásához elsőnek el kell vegezni a megfelelő
+telepítéséket  . ilyen peldaul a libpng konyvtar is . A program futása
+utan egy keppel leszunk gazdagabbak . A program a mar letrehozott PNG kep alapan
+fogja az uj kepet elkeszíteni.Mereteit a Get_width() és a get_height() befolyasollja .
+a program futása során 2 forciklus segítésével végigmegy a kep szélességén
+és magassagan beallítva annak mereteit . A beimportalt kep piros reszeit a lefoglalt tarba helyezzuk el majd ennek
+a segítéségvel keszíti el a kepet  
+
         </para>
+        <para>
+         <programlisting language="c"><![CDATA[
+#include <iostream> 
+#include "png++/png.hpp"
+#include "mlp.hpp"
+
+using namespace std; 
+using namespace png;
+
+int main ( int argc, char *argv[] ) 
+{ 
+image <rgb_pixel> png_image (argv[1]); 
+int size = png_image.get_width() * png_image.get_height();
+
+Perceptron* p = new Perceptron(3, size, 256, 1);
+
+double* image = new double[size];
+
+for (int i{0}; i < png_image.get_width(); i++) 
+for (int j{0}; j < png_image.get_height(); j++) 
+image[i * png_image.get_width() + j] = png_image[i][j].red;
+
+double value = (*p)(image); 
+cout <<" "<< value << endl;
+
+
+delete p; delete [] image
+]]></programlisting>
+
+        </para>
+
     </section> 	
         
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
