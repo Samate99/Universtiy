@@ -20,7 +20,44 @@ https://www.tankonyvtar.hu/hu/tartalom/tkt/javat-tanitok-javat/ch01.html#id52728
             Megoldás forrása:                
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+Tehat feladatunk a Port scan forrásban lévő kivételkezelések megvizsgálása majd bemutatása.
+Ahogy lathatjuk a kód javaban született . Szerintem elsonek erdemes beszelni magaról a kivetelekről
+. A kivetel nem mas mint egy esemény amely a program futása során keletkezik 
+es megszakítja az utasítások végrehajtásának normális folyamatát .A kiveteleket 
+többféle módon is kezelhetjuk akar eldobhatjuk oket (Throw ) vagy elkaphatjuk őket (catch) Maga a kivetelkezelés 3 blokk segítségével
+történik ez a három blokk nem mas mint a TryaBlokk a catch blokk illetve a Finally block. 
+Az első lépés nem mas mint a kód elhelyezése a megfelelő helyen tehat a tryBlokkban 
+Miutan ezzel megvagyunk és szeretnenk a bekovetkezett kivetelt lekezelni szükségünk van egy Catch blokkra 
+amit hozzá kell kapcsolnunk a Try blokkunkhoz.  A catch maga egy kivetelkezelő , rendelkezik egy paraméterrel , tehat azon tipusu kivetelt kepes kezelni
+amelyien paraméterrel rendelkezik. A kivetelkezelők többet is kepesek tenni mint egy hibauzenet kepesek akar hibajavításra is.
+Vegul a Finally blokk kovetkezik mely rengeteg szereppel rendelkezik gyakorlatilag a "takarító " szerepkört látja be
+. Peldaul hasznalthatjuk fajlok bezárására amelyekre mar nincs szükségünk.
+        </para>
+              <programlisting language="c"><![CDATA[
+
+
+public class KapuSzkenner {
+    public static void main(String[] args) {
+        for(int i=0; i<1024; ++i)
+
+            try {
+                java.net.Socket socket = new java.net.Socket(args[0], i);
+                System.out.println(i + " figyeli");
+                socket.close();
+            } catch (Exception e) {
+                System.out.println(i + " nem figyeli");
+
+            }
+    }
+
+}
+}]]></programlisting>          
+        
+        <para>
+A kódban a fentebb említett blokkok közül kettő talalható egy Try es ebben egy catch .
+Lathatjuk hogy a tryal probaljuk a kívételt illetve kiiratjuk az it + egy üzenetet ami nem mas mint a "Figyeli"
+Illetve lathatjuk a catch reszt amelyel kezeljuk a kivetelt nyilvan ha idekerülünk itt is van egy üzenet 
+hasonlóan az előzőhöz kiiratjuk az i értéket illetve  a "Nem figyeli " üzenetet 
         </para>
     </section>        
 
@@ -37,8 +74,33 @@ feladat volt korábban.)
             Megoldás forrása:                
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+            
+Tehat az AOP vagyis Aspektus Orientalt programozás nem mas mint egy folyamat amelynek a segítségével könnyebb lesz a kód
+olvashatósága. Maga az AOP az OOP egy tovabbfejlesztett valtozata. Az en megoldasomban azt lhathatjuk hogy egy
+AOP scriptebe kerül bele a binfa java valtozata . Ahogy lathatjuk a kódban az események a Meghívásoknal fognak
+keletkezni tehat  a program a kiir függvény meghívására reagal . Meghívás előtt kiirja hogy meghívjuk
+miutan meghívtuk pedig kiirja hogy meghívtuk ezt a before es after figyelő segítéségvel csinalja . illetve ezeken felül a progrtam termeszetesen írja
+hogy a futás során hányszor hívjuk meg illetve a ha a futás során keletkeztek hibák azokról is kapunk
+üzenetet. A kódban lathatjuk hogy a fentebb említett számolásra van 2 darab int valtozonk . 
         </para>
+        
+                  <programlisting language="c"><![CDATA[
+ public aspect kiirMeghiv  { 
+    public pointcut fgv(): call(public void LZWBinFa.Csomopont.kiir()); 
+      int bef = 0; 
+      int aft = 0; 
+      before(): fgv() { 
+        bef++; 
+        System.out.println("kiir indul");
+        } 
+      after(): fgv()  { 
+        aft++; 
+        System.out.println("kiir lefutott"); 
+           } 
+       }
+
+}]]></programlisting>      
+        
     </section>        
 	<section>
         <title>Android Játék</title>
@@ -70,8 +132,51 @@ volt korábban).
             Megoldás forrása:                
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+
+Következő feladatunk nem mas mint a Junit teszt lesz . Ebbeb a feladatban a posztban kézzel számított mélységét és szórasat kell
+egy Junit tesztben megcsinalnunk. A junit teszt nem mas mint egy egységteszt keretrendszer  eredetileg  javához de mostmar
+portolasok utjan a legtobb nyelven elerhető . A feladatunk hogy ezt a tesztet össze rakjuk a binfa védési programba 
+és a kapott illetve előrre kiszamolt ertekeket össze kell hasonlítani . A "@Test"
+hasznalataval allítjuk be hogy merre keszítse a tesztet . A feladatban fel kell vennünk a 01111001001001000111 
+egy valtozoba majd vegig kell mennünk minden karakteren ,  vegul visszadnunk a fanak ezutan kell kiszamolnunk
+a megfelelő értékeket amelyek nem lesznek masok mint a getAtlag a getSzoras és a getMelyseg  .
+Ha megvagyunk a szamolassal a mar meglevő értékekkel kell összehasonlítanunk . Nyilvan ha itt kiderül
+hogy a teszt helyes volt e vagy nem megfelelő 
         </para>
+        
+    <programlisting language="c"><![CDATA[
+ LZWBinFA binfa = new LZWBinFa(); 
+  String value = "01111001001001000111";
+
+  @Test 
+  public void atlagTest(){
+  Univerzális programozás 137 / 143
+
+   for(int i = 0; i < value.length(); i++) 
+     binfa.push_back(str.charAt(i));
+   double atlag = binfa.getAtlag(); 
+   assertEquals(2.75, atlag, 0.001);
+  } 
+  @Test 
+   public void szorasTest(){ 
+       for(int i = 0; i < value.length(); i++)
+           binfa.push_back(str.charAt(i));
+
+      double szoras = binfa.getSzoras(); 
+      assertEquals(0.9574271077563381, szoras, 0.001);
+   } 
+   @Test 
+    public void melysegTest(){ for(int i = 0; i < value.length(); i++) 
+         binfa.push_back(str.charAt(i));
+
+       double melyseg = binfa.getMelyseg();
+       assertEquals(1040, melyseg, 0.001);
+   }
+
+
+
+}]]></programlisting>   
+        
     </section>        
 	<section>
         <title>OSCI</title>
