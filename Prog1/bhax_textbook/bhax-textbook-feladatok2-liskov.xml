@@ -99,15 +99,17 @@ https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog2_1.pdf (98. f�
 Tutor : Veress Máté
         </para>
         <para>
- Tehat nezzuk meg a programunk.  Lathatjuk hogy rendelkezunk egy teglalap nevű osztállyal amely rendelkezik egy meret nevu funkcioval
-a meret tartalmaz értékekekt , ezek nem masak mint szelesség és a magassag . Láthatjuk hogy a teglalap osztály rendelkezik egy alosztállyal ami a negyzet nevet viseli.
-ez az alosztály rendelkezik egy terület nevű függvénnyel. A program futtatása során
-hibát tapasztalhatunk ez a "teglalap.terulet()" köszönhető . Mivel a teglalap osztály nem rendelkezik terület függvénnyel csak a negyzet nevű alosztálya.
+ Tehat nezzuk meg a programunk.  Lathatjuk hogy a kódban rendelkezunk egy teglalap nevű osztállyal amely rendelkezik egy meret nevu funkcioval
+és a  meret tartalmaz 2 értéket , ezek nem masak mint szelesség és a magassag . 
+Láthatjuk hogy a teglalap osztály rendelkezik egy alosztállyal ami a negyzet nevet viseli.
+Ez  az alosztály rendelkezik egy terület nevű függvénnyel.
+A program futtatása során hibát tapasztalhatunk ez a "teglalap.terulet()" köszönhető . M
+ivel a teglalap osztály nem rendelkezik ilyen "teglalap.terulet()" függvénnyel csak az a negyzet nevű alosztálya.
         </para>
         
         
         <para>
-            C++
+            C++ Kód
         </para>
                  <programlisting language="c"><![CDATA[
 #include <stdio.h>
@@ -136,7 +138,7 @@ teglalap.terulet();
 
 
  <para>
-     Java
+     Java kód
  </para>
  
  <programlisting language="c"><![CDATA[
@@ -308,25 +310,9 @@ eleg közeli futasi idoket produkal.
 </para>
 
         
-    </section>
-	<section>
-        <title>deprecated - Hello, Android!</title>
-        <para>
-Élesszük fel a https://github.com/nbatfai/SamuEntropy/tree/master/cs projektjeit és vessünk össze
-néhány egymásra következőt, hogy hogyan változtak a források!
+</section>
 
-        </para>
-        <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:                
-        </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
-    </section>
-	<section>
+ <section>
         <title>Hello, Android!</title>
         <para>
 Élesszük fel az SMNIST for Humans projektet!
@@ -380,42 +366,17 @@ ahogy lathatjuk a meretuket és az elhelyezkedesuket is tudjuk alakítani
         fillPaint.setColor(android.graphics.Color.YELLOW);
 
  ]]></programlisting>
-        
-    </section>
-	<section>
-        <title>Hello, SMNIST for Humans!</title>
-        <para>
-Fejleszd tovább az SMNIST for Humans projektet SMNIST for Anyone emberre szánt appá! Lásd
-az smnist2_kutatasi_jegyzokonyv.pdf-ben a részletesebb hátteret!
+                <para>
+            <figure>
+            <title>  Nem sajat kep </title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="buzi/smnist.png" scale="70"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
         </para>
-        <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:                
-        </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
-    </section>
-	<section>
-        <title>Ciklomatikus komplexitás</title>
-        <para>
-Számoljuk ki valamelyik programunk függvényeinek ciklomatikus komplexitását! Lásd a fogalom
-tekintetében a https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog2_2.pdf (77-79
-fóliát)!
-        </para>
-        <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:                
-        </para>
-        <para>
-Tehat a ciklomatikus komplexitás egy szoftvermetrika . Maga a szoftvermetrikat egy olyan módszer amlyekkel kulonboző szoftverketet mérnek.
-Magat a ciklometikus komplexitást első megjelenése 1976-ban törtent. Ebben az évben publikálta Thomas J	 McCabe. Emiatt sok helyen McCabe konvexitás
-néven talalhatjuk meg . A mérés után komplexitást egy számként kapjuk vissza. Amelyet a a forráskódban szerelpő megfelelő adatok alapjan szamol ki.
-        </para>
+          
     </section>
         
         

@@ -35,7 +35,6 @@ Vegul a Finally blokk kovetkezik mely rengeteg szereppel rendelkezik gyakorlatil
         </para>
               <programlisting language="c"><![CDATA[
 
-
 public class KapuSzkenner {
     public static void main(String[] args) {
         for(int i=0; i<1024; ++i)
@@ -49,8 +48,6 @@ public class KapuSzkenner {
 
             }
     }
-
-}
 }]]></programlisting>          
         
         <para>
@@ -98,25 +95,10 @@ hogy a futás során hányszor hívjuk meg illetve a ha a futás során keletkez
         System.out.println("kiir lefutott"); 
            } 
        }
-
 }]]></programlisting>      
         
     </section>        
-	<section>
-        <title>Android Játék</title>
-        <para>
-		Írjunk egy egyszerű Androidos „játékot”! Építkezzünk például a 2. hét „Helló, Android!” feladatára!
-        </para>
-        <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:                
-        </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
-    </section>        
+     
 	<section>
         <title>Junit teszt</title>
         <para>
@@ -140,8 +122,8 @@ portolasok utjan a legtobb nyelven elerhető . A feladatunk hogy ezt a tesztet �
 hasznalataval allítjuk be hogy merre keszítse a tesztet . A feladatban fel kell vennünk a 01111001001001000111 
 egy valtozoba majd vegig kell mennünk minden karakteren ,  vegul visszadnunk a fanak ezutan kell kiszamolnunk
 a megfelelő értékeket amelyek nem lesznek masok mint a getAtlag a getSzoras és a getMelyseg  .
-Ha megvagyunk a szamolassal a mar meglevő értékekkel kell összehasonlítanunk . Nyilvan ha itt kiderül
-hogy a teszt helyes volt e vagy nem megfelelő 
+Ha megvagyunk a szamolassal a mar meglevő értékekkel kell összehasonlítanunk . Nyilvan  itt kiderül
+hogy a teszt helyes volt e vagy nem 
         </para>
         
     <programlisting language="c"><![CDATA[
@@ -172,31 +154,8 @@ hogy a teszt helyes volt e vagy nem megfelelő
        double melyseg = binfa.getMelyseg();
        assertEquals(1040, melyseg, 0.001);
    }
-
-
-
 }]]></programlisting>   
         
     </section>        
-	<section>
-        <title>OSCI</title>
-        <para>
-		Készíts egyszerű C++/OpenGL-es megjelenítőt, amiben egy kocsit irányítasz az úton. A kocsi
-állapotát minden pillanatban mentsd le. Ezeket add át egy Prolog programnak, ami egyszerű reflex
-ágensként adjon vezérlést a kocsinak, hasonlítsd össze a kézi és a Prolog-os vezérlést. Módosítsd
-úgy a programodat, hogy ne csak kézzel lehessen vezérelni a kocsit, hanem a Prolog reflex ágens
-vezérelje!
-        </para>
-        <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:                
-        </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
-    </section>        
-        
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 </chapter>                

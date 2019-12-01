@@ -23,16 +23,12 @@ Ugyanezt írjuk meg C++ nyelven is! (lásd még UDPROG repó: source/labor/polar
         <para>
             Megoldás forrása:                
         </para>
+        
         <para>
-A programunk ugy mukodik hogy megnezi hogy van e előrre már tárolt értékünk . Ha nincs számunk akkor akkor keszít szamunkra.
-Tehat a program generált 2 szamot a megadott értékek között ez lesz a kódban az 
-u1 és az u2 .Kulonbozo muveletek segítéségével  létrehozza V1et és V2ot . Majd Mindkettőt megszorozza 
-önmagával és összeadja őket így létrehozza a w-t . Ez a ciklus addig ismétlődik még
-a w nagyobb mint 1 . Majd ezutan egy muvelet segítéségvel létrehozzuk az r-t es ezt az r-t megszorozzuk
-a V2vel majd eltaroljuk. Miutan van már tartolt ertekünk visszaadjuk az r szorozva v1 értéket.
-        </para>
-        
-        
+Tehat ha megnezzuk a  programunk ugy mukodik hogy megnezi hogy van e már előrre tárolt értékünk . Termeszetesen ha van tarolt érték 
+akkor a program azzal dolgozik ha nincs akkor pedig keszít egyet . Vagyis pontosabban kettőt erteket keszít szamunka a metódus amelyek közül
+az egyiket letarolja a masodikat meg visszaadja. és azzal vegzi el a számításokat
+</para>
  <programlisting language="c"><![CDATA[
 import java.util.Random;
 import java.io.*;
@@ -95,9 +91,6 @@ public class PolarGen	{
 C++ valtozat
         </para>
         
-        
-      
-       
  <programlisting language="c"><![CDATA[       
 #include<cmath>
 #include <cstdlib>
@@ -168,7 +161,7 @@ int main(int argc, char** argv) {
     <section>
         <title>Homokozó</title>
         <para>
-rjuk át az első védési programot (LZW binfa) C++ nyelvről Java nyelvre, ugyanúgy működjön!
+irjuk át az első védési programot (LZW binfa) C++ nyelvről Java nyelvre, ugyanúgy működjön!
 Mutassunk rá, hogy gyakorlatilag a pointereket és referenciákat kell kiirtani és minden máris működik
 (erre utal a feladat neve, hogy Java-ban minden referencia, nincs választás, hogy mondjuk egy
 attribútum pointer, referencia vagy tagként tartalmazott legyen).
@@ -182,9 +175,9 @@ Miután már áttettük Java nyelvre, tegyük be egy Java Servletbe és a böng�
             Megoldás forrása:  <link xlink:href='https://github.com/Samate99/Hello-world/blob/master/LZWBinFa.java'>https://github.com/Samate99/Hello-world/blob/master/LZWBinFa.java</link>               
         </para>
         <para>
-A feladatunk hogy átírjuk a binfát javará
-Gyakorlatilag át kell írnunk  c kódban szereplő pointereket illetve referenciákat 
-javas referenciara  illetve át kell írnunk java szintaxisnak megfelelőre . 
+A feladatunk hogy átírjuk a binfát java nyelvre .
+Gyakorlatilag át kell írnunk  c kódban szereplő pointereket illetve referenciákat nem másra mint
+javas referenciara  illetve át kell írnunk java szintaxisnak megfelelően a kódot .  . 
         </para>
     </section>  
 
@@ -209,19 +202,22 @@ példányokat poolozza!
             
         </para>
         <para>
-            A szöveg alatt láthatunk 2 darab kódot láthatunk . Amelyekben csak 2 érték az x, és a t különbözük . 
-            Az első esetben láthatjuk hogy az x és a t érték jóval nagyobb mint a masodik esetben. A két szám nagyobb értéke miatt
-            ebben az esetben a ciklus feltétele igaz lesz ez pedig előidézi szamunkra a végtelen ciklust. 
-            Ez a folyamat  alap  integer osztálynak köszönhető ami alapból -128-tól 128ig tart.Mivel ez a 2 érték kívül esik az adott tartományon emiatt 
-            a ciklus feltétele igaz lesz. Ezzel szemben ha  adott 2 szám bennevan ebben az osztályban mint ahogy látható a második esetben
-            akkor természetesen a  a ciklusunk feltétele hamis lesz es így nem jön létre egy végtelen ciklus.
+            A szöveg alatt láthatunk 2 darab kódot láthatunk . Amelyekben szinte teljesen ugyanolyanok.
+            Ezekeben csak 2 érték az x, és a t érték különböző. 
+            Az első esetben láthatjuk hogy az x és a t érték jóval nagyobb mint a masodik esetben. A két szám nagyobb értéke azt generalja
+           hogy  ebben az esetben a ciklus feltétele igaz lesz ez pedig előidéz szamunkra egy  végtelen ciklust. 
+            Ez a folyamat  alap  integer osztálynak köszönhető ami alapból egy 2 érték közötti tartomány  amely nem mas mint  -128 és  127 között talalható .
+            De mivel ez a 2 érték kívül esik az adott tartományon emiatt 
+            a ciklus feltétele igaz lesz. Ezzel szemben ha megnezzuk a masodik esetet ahol a  2 szám bennevan ebben az osztályban mint ahogy látható 
+            akkor természetesen a  a ciklusunk feltétele hamis lesz es így nem nem következik ugyanaz be mint az első esetben 
+            tehat a ciklus feltétele nem igaz hanem hamis lesz tehat nem jön létre egy végtelen ciklus.
         </para>
-<para>
+
   <programlisting language="c"><![CDATA[    
     public class gagyi {
       public static void main(String args[]){
- Integer x = 500;
- Integer t = 500; 
+ Integer x = 2001    ;
+ Integer t = 2001    ; 
  System.out.print("A "+ "ciklus "+"kezdete\n"); 
  while(x<=t && x>=t && x!=t) 
 {} 
@@ -229,25 +225,22 @@ System.out.println("A cilus vége");
 }
 ]]></programlisting> 
 
-</para>
 
 
-<para>
+
+
     <programlisting language="c"><![CDATA[    
  public class gagyi {
 public static void main(String args[])
 {
-Integer x = -128; 
-Integer t = -128;
+Integer x = -21; 
+Integer t =  21;
 System.out.print("A "+ "ciklus "+"kezdete\n"); 
 while(x<=t && x>=t && x!=t)
 {} 
 System.out.println("A cilus vége");
 } 
 }]]></programlisting> 
-
-</para>
-
 
 
     </section>  
@@ -266,16 +259,15 @@ conditions-t! https://en.wikipedia.org/wiki/Yoda_conditions
             Megoldás forrása:                
         </para>
         <para>
-A yoda conditions alatt egy megfordított összehasonlítást értünk . Tehat alap esetben
-a valtozot hasonlítjuk valamihez peldaul hasonlítjuk egy ertekhez. Ezzel szemben
-itt a valtozohoz hasonlítunk. Igazaból programozási szempontból ez a felcsereles nem fontos hisz
-mindkét esetben a megfelelő eredmenyt kapjuk vissza.
-A feladatunk a java.lang.Nullpointer.ex hiba előhozása. Ez a hiba gyakorlatilag
-akkor keletkezik amikor egy olyan valtozót hasonlítunk 
-amelynek az értéke Null. Tehat a feladatunk hogy a valtozo értéke null legyen
-. Ilyen peldaul a szöveg alatti kód is ahol a masodik IF sorában hozzuk elő a hibát.
-Ahogy lathatjuk itt a valtozonk értéke null emiatt egy futtatás utan egyszeruen megkapjuk a hibat.
-
+A yoda conditions alatt egy megfordított összehasonlítást értünk . 
+Tehat ha egy alap esetet nezunk akkor valtozot hasonlítjuk .De itt a megvan fordítva és a valtozohoz hasonlítunk
+. Igazabol ez végülis programozási szempontból mindegy hisz mindkét esetben elvileg mukodni fog a program..
+De ha egy olyan valtozott hasonlítunk melynek erteke null akkor hibat kapunk. Nem is akarmilyet a java.lang.Nullpointer.ex
+hibat ami a feladatunk.
+ </para>
+        <para>
+          Ennek a kódnak a segítségével idézhetjuk elő a java.lang.nullpointer.ex hibát . 
+          Pontosabban a 2. if esetében történik a hiba , mivel ott a valtozonk erteke nem mas mint null így hibát kapunk
         </para>
         
  <para> 
@@ -319,11 +311,12 @@ melyet szeretném, ha átélnél).
         <para>
 A BBP algoritmus ki nem talalnak a BBP formulát hasznalja
 melyet Simon Plouffe nevéhez köthetünk . Maga az algoritmus
-a Pi számjegyeinek meghatarozására hasznaljak .
+a Pi számjegyeinek meghatarozására alkamas  . Tovabba ami még egyedibbé és érdekesebbé teszi a programot az nem mas mint az 
+hogy nem feltetlenul az első helyről kaphatjuk meg a pi számjegyeit hanem egy alltalunk kivalaszott pozíciótól is lekérhetjuk a szamjegyeit.
         </para>
         
         
- <para>
+
          package bpp;
 
 
@@ -391,8 +384,9 @@ public class PiBBP {
 
 }
 }]]></programlisting> 
+     <para>
+         Ahogy lathatjuk a program d+1 helytol számítva adja vissza a Pi értékeit tehat.
      </para>
-     
     </section>  	
         
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         

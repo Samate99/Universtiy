@@ -22,79 +22,31 @@ https://www.tankonyvtar.hu/hu/tartalom/tkt/javat-tanitok-javat/adatok.html
         </para>
         <para>
             A javaban a C++/C-vel ellentetben van lehetőségünk ekezetes betuk hasznalatara . A java nyelv egyik nagy előnye hogy 
-jóval több karakterkészletet képes kezelni . Ezalltal a mi magyar betuinkat is siman hasznalhatjuk , gond nelkul hasznalhatjuk.
-A mandelbrot halmaz is magyar karakterkészletet felhasznalva készült ezálltal a fordítás során hibát tapasztalhatunk.
+jóval több karakterkészletet képes kezelni . Ezalltal a mi magyar betuinkat is siman hasznalhatjuk , gond nelkul .
+A mandelbrot halmaz is magyar karakterkészletet felhasznalva készült .Ebből kifolyólag  A hagyományos  fordítás során hibát tapasztalhatunk.
 A jelen esetben az ISO-8859-2es karakterkeszletet kell hasznalnunk hogy a fordítás sikeres legyen ehez nincs mas dolgunk mint az 
 -encoding kapcsolo hasznalata. ezzel tudjuk beallítani hogy milyen karakterkeszletet hasznaljunk. A program ugyanaz
-mint a prog1en mar megismert program . Tehat kapun k egy mandelbrot halmazt amelyben az eger segítéségvel tudunk részeket kijelolnni
-illetve ezeket a kijelölt részeket nagyítani.
+mint a prog1en mar sokak számára megismert program . Tehat kapun k egy mandelbrot halmazt amelyben az eger segítéségvel tudunk részeket kijelolnni
+illetve ezeket a kijelölt részeket kinagyítani. 
         </para>
+        
+      
+                <para>
+            <figure>
+            <title>  mandelbrot </title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="buzi/mandelbort.png" scale="70"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        </para>
+          
+        
+        
+        
     </section>        
 
-     <section>
-        <title>OOCWC lexer</title>
-        <para>
-		Izzítsuk be az OOCWC-t és vázoljuk a https://github.com/nbatfai/robocaremulator/blob/master/justine/rcemu/src/carlexer.ll lexert és kapcsolását a programunk OO
-struktúrájába!
-
-        </para>
-        <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:                
-        </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
-    </section> 
-    <section>
-        <title>l334d1c45</title>
-        <para>
-		Írj olyan OO Java vagy C++ osztályt, amely leet cipherként működik, azaz megvalósítja ezt a betű
-helyettesítést: https://simple.wikipedia.org/wiki/Leet (Ha ez első részben nem tetted meg, akkor írasd
-ki és magyarázd meg a használt struktúratömb memóriafoglalását!)
-        </para>
-        <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:                
-        </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
-    </section> 
-    <section>
-        <title>Full screen</title>
-        <para>
-		Készítsünk egy teljes képernyős Java programot!
-Tipp: https://www.tankonyvtar.hu/en/tartalom/tkt/javat-tanitok-javat/ch03.html#labirintus_jatek
-        </para>
-        <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:                
-        </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
-    </section>     
-	<section>
-        <title>Paszigráfia Rapszódia OpenGL full screen vizualizáció</title>
-        <para>
-        </para>
-        <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:                
-        </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
-    </section> 	
 	<section>
         <title>Paszigráfia Rapszódia OpenGL full screen vizualizáció</title>
         <para>
@@ -109,7 +61,7 @@ elkülönítése, kézreállóbb irányítás.
         </para>
         <para>
 A feladatunkban paszgrafiai rapszódia , vagyis az ugynevezett PaRaval fogunk foglalkozni ez nem mas mint egy mesterséges nyelv 
-kialakítására törekvő kezdeményezés . Celjanem mas mint a homunkulusz és a mesterséges homunkulusz közötti kapcsolat.A
+kialakítására törekvő kezdeményezés . Celjanem mas mint az ugynevezett homunkulusz és a mesterséges homunkulusz közötti kapcsolat.A
  programban a para vizualizacios lehetőségeit nezzuk meg. A program az SMNISThez hasonloan  pöttyökkel dolgozunk
 csak itt eppen nem a szamosaggon hanem a "pöttyök" elhelyezkedésén van a hangsúly ! A programban kulonbozo forgatható kockakkal
 es ezekben elhelyezkedő négyzetekkel fogunk dolgozni. 
@@ -121,7 +73,7 @@ A billentyuzet gombajait pedig a keyboard reszben tudjuk atalakítani
         <para>
               <programlisting language="c"><![CDATA[
 
-  glColor3f ( 0.188f, 0.209f, 0.190f );
+  glColor3f ( 0.180f, 0.202f, 0.191f );
 ]]></programlisting>
 
 
@@ -129,29 +81,13 @@ A billentyuzet gombajait pedig a keyboard reszben tudjuk atalakítani
         
          <para>
               <programlisting language="c"><![CDATA[
-int w = 1920; 
-int h = 1080;
+int w = 1280; 
+int h = 768;
 
 ]]></programlisting>
 
-
         </para>
         
-    </section> 
-	<section>
-        <title>Paszigráfia Rapszódia LuaLaTeX vizualizáció</title>
-        <para>
-Lásd vis_prel_para.pdf! Apró módosításokat eszközölj benne, pl. színvilág, még erősebb 3D-s hatás.
-        </para>
-        <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:                
-        </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
     </section> 
 	<section>
         <title>Perceptron osztály</title>
@@ -177,8 +113,8 @@ telepítéséket  . ilyen peldaul a libpng konyvtar is . A program futása
 utan egy keppel leszunk gazdagabbak . A program a mar letrehozott PNG kep alapan
 fogja az uj kepet elkeszíteni.Mereteit a Get_width() és a get_height() befolyasollja .
 a program futása során 2 forciklus segítésével végigmegy a kep szélességén
-és magassagan beallítva annak mereteit . A beimportalt kep piros reszeit a lefoglalt tarba helyezzuk el majd ennek
-a segítéségvel keszíti el a kepet  
+és magassagan beallítva annak mereteit . A beimportalt kep piros reszeit a lefoglalt tarba helyezi el majd ennek
+a segítéségvel keszíti el a kepet  a program.
 
         </para>
         <para>

@@ -106,22 +106,6 @@ void ProgClass::initAttributes () {
         </para>
     </section> 
 	    <section>
-        <title>Egy esettan</title>
-        <para>
-		A BME-s C++ tankönyv 14. fejezetét (427-444 elmélet, 445-469 az esettan) dolgozzuk fel!
-
-        </para>
-        <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:                
-        </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
-    </section> 
-	    <section>
         <title>BPMN</title>
         <para>
 		Rajzoljunk le egy tevékenységet BPMN-ben!
@@ -159,38 +143,5 @@ ha hamis leszt azaz nem leszunk faradtak akkor elmegyunk mast csinalni
         
     </section> 
 	
-	    <section>
-        <title>BPEL Helló, Világ! - egy visszhang folyamat</title>
-        <para>
-		Egy visszhang folyamat megvalósítása az alábbi teljes „videó tutoriál” alapján:
-https://youtu.be/0OnlYWX2v_I
-
-        </para>
-        <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:                
-        </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
-    </section> 
-            <section>
-        <title>TeX UML</title>
-        <para>
-		Valamilyen TeX-es csomag felhasználásával készíts szép diagramokat az OOCWC projektről (pl.
-use case és class diagramokat).
-        </para>
-        <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:                
-        </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
-    </section> 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 </chapter>                

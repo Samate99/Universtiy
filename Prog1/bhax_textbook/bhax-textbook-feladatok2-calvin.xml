@@ -20,27 +20,50 @@ https://prezi.com/0u8ncvvoabcr/no-programming-programming/
             Megoldás forrása:                
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+
+Az MNIST egy nagyon erdekes program amely a fejezet tobbi feladatahoz hasonloan kepes felismerni
+valamit, ebben az esetben a valami a rajzolt számokat takarja . A megfelelő futáshoz többek
+között szükségünk lesz a tensorflow könytárra is. A programnal minél több futtatásra van szüksége
+így kepes "tanulni". Tehat a futások számával nő a program pontossága . Maga a progam 28x28 as
+kepekkel dolgozik . Tehat ekkora felbontasu kepeket kell szereznunk vagy eppen keszítenunk .
         </para>
+        
+         <programlisting language="c"><![CDATA[
+ for i in range(1000): 
+    batch_xs, batch_ys = mnist.train.next_batch(100) 
+    sess.run(train_step, feed_dict={x: batch_xs, y_: batch_ys}) 
+          if i % 100 == 0: 
+             print(i/10, "%")
+}]]></programlisting> 
+        
+<para>
+Tehat a programnak több része van az első a tanulas resze itt a program iterációkat vegez
+szamszerint ezret es ezt százalékos formában jelzi a felhasznalónak tehat hogy a tanulas eeppen 
+hogy áll.
+</para>
+
+
+               <programlisting language="c"><![CDATA[
+img = mnist.test.images[23] 
+ image = img
+
+ matplotlib.pyplot.imshow(image.reshape(28, 28), cmap=matplotlib.pyplot.cm .binary) 
+
+  matplotlib.pyplot.savefig("4.png") 
+  matplotlib.pyplot.show()
+
+    classification = sess.run(tf.argmax(y, 1), feed_dict={x: [image]})
+
+   print("-- Ezt a halozat ennek ismeri fel: ", classification[0])
+}]]></programlisting>   
+<para>
+    
+Ha a tanulas folyamatat befejezuk elkezdhetunk a programnak kepeket adni
+</para>
+
+
     </section>        
 
-   <section>
-        <title>Deep MNIST</title>
-        <para>
-		Mint az előző, de a mély változattal. Segítő ábra, vesd össze a forráskóddal a
-https://arato.inf.unideb.hu/batfai.norbert/NEMESPOR/DE/denbatfai2.pdf 8. fóliáját!
-
-        </para>
-        <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:                
-        </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
-    </section>        
 
 <section>
         <title>CIFAR-10</title>
@@ -56,8 +79,41 @@ https://progpater.blog.hu/2016/12/10/hello_samu_a_cifar-10_tf_tutorial_peldabol
             Megoldás forrása:                
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+ Tehat a CIFAR-10 ez ne mmas mint a többi programhoz hasonloan egy TensorFlowos pelda . Viszont 
+a MNITSel ellentetben itt nem csak szamokat lesz kepes felismerni a programunk.
+Tehat itt nem csak szamokat hanem fotokat es a fotokon szereplo dolgokat kepes felismerni a program.
+A program az 32x32 pixel méretű képekkel dolgozik megfelelően . Nyilvan mas nem megfelelő felbontasu kepekkel
+is mukodhet csak termeszetesen nem megfelelően. Maga a CIFAR-10 is rendelkezik rengeteg alap keppel . 
+Viszont termeszetesen mi is adhatunk neki sajat kepeket a tanulashoz. A programot
+a megfelelő mukodeshez , felismeréshez rengetegszer kell futtatnunk hiosz így futtatásról
+futtatásra okosabb lesz es kepes lesz felismerni a kepunket.
         </para>
+        
+        <para>
+ Mivel a program binaris fajlokkal kepes dolgozni emiatt a kepeinket is ilyen formaba
+kell hoznunk hisz kizarolag csak ilyen fajlokkal dolgozik a program.
+Ehez nincs is mas dolgunk mint a feladat leírásában talalható blog elolvasa es az ott talalható
+program hasznalata .
+
+        </para>
+
+<programlisting language="c"><![CDATA[
+from PIL import Image
+import numpy as np
+
+im = Image.open('images.jpeg')
+im = (np.array(im))
+
+r = im[:,:,0].flatten()
+g = im[:,:,1].flatten()
+b = im[:,:,2].flatten()
+label = [1]
+
+out = np.array(list(label) + list(r) + list(g) + list(b),np.uint8)
+out.tofile("out.bin")
+}]]></programlisting>   
+        
+        
     </section>        
 
 <section>
@@ -73,44 +129,50 @@ https://progpater.blog.hu/2016/12/10/hello_samu_a_cifar-10_tf_tutorial_peldabol
             Megoldás forrása:                
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
-    </section>        
-
-<section>
-        <title>SMNIST for Machines</title>
-        <para>
-		Készíts saját modellt, vagy használj meglévőt, lásd: https://arxiv.org/abs/1906.12213
-
-        </para>
-        <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:                
-        </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
-    </section>        
-
-<section>
-        <title>Minecraft MALMO-s példa</title>
-        <para>
-		A https://github.com/Microsoft/malmo felhasználásával egy ágens példa, lásd pl.:
-https://youtu.be/bAPSu3Rndi8, https://bhaxor.blog.hu/2018/11/29/eddig_csaltunk_de_innentol_mi,
-https://bhaxor.blog.hu/2018/10/28/minecraft_steve_szemuvege
+Tehat a feladatban a tensorFlowt fogjuk hasznalni , Maga a tensoroflow egy nagyon erdekes program
+amely többek között kepes objektumfelismerésre mi ezt fogjuk kihasznalni . A programot
+egyszeruen meg lehet szerezni a peldaul a Google play segítéségével képesek vagyunk
+egyszeruen letolteni es hasznalni. A program a kamerán keresztül képes tárgyakat felismerni.
+A felismerés utan egy színes negyszöget rajzol  majd kiirja alá hogy a program alapjan mi latható 
+a kepen. A program könnyedén képes mindenfele targyat , embert allatot felismerni kisebb-nagyobb
+elteressel. Szerintem egy par-perces hasznalat utan mar lathatjuk hogy több esetben is 
+nem megfelelő eredményt ad a program .Tehat peldaul az xbox360omat egernek :D az egerem dobozat
+pedig laptopnak erzekelte illetve a mikorofnomat repulonek . Illetve a szekreny mellett nem a szekrenyt
+vette eszre hanem kiirta hogy person .
 
         </para>
+        
         <para>
-            Megoldás videó:
+            Ezek a kapon egy kiflit érzékelt macskának
         </para>
-        <para>
-            Megoldás forrása:                
+        
+        
+                <para>
+            <figure>
+            <title>  Forrás : Sajat kep </title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="buzi/cica.png" scale="70"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
         </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
+    <para>
+        mondjuk szerintem így nez ki egy macska...
+    </para>
+                <para>
+            <figure>
+            <title>  Forrás : Sajat kep </title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="buzi/cica2.png" scale="70"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
         </para>
+        
+        
+        
     </section>        
 
         

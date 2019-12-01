@@ -7,23 +7,6 @@
     </info>
 
     <section>
-        <title>FUTURE tevékenység editor</title>
-        <para>
-		Javítsunk valamit a ActivityEditor.java JavaFX programon!
-https://github.com/nbatfai/future/tree/master/cs/F6
-Itt láthatjuk működésben az alapot: https://www.twitch.tv/videos/222879467
-        </para>
-        <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:                
-        </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
-    </section>        
-    <section>
         <title>OOCWC Boost ASIO hálózatkezelése</title>
         <para>
 		Mutassunk rá a scanf szerepére és használatára! https://github.com/nbatfai/robocaremulator/blob/master/justine/rcemu/src/carlexer.ll
@@ -35,8 +18,23 @@ Itt láthatjuk működésben az alapot: https://www.twitch.tv/videos/222879467
             Megoldás forrása:                
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+            
+A következő feladatban az OOCW Boost ASIO hálózatkezelésről és azon belul is a sancf szereperől fogunk beszelni.
+A programban tcpre jonnek a csomagok a amelyeket a scanf kezel . A snacf egy fajlkezelő függvény melynek az a  
+szerepe hogy beolvasás az eppen adott inputból . 
+Illetve ezt a amit kapunk adatot eltaroljuk a megfeleő helyre az adott input tipusanak alapjan.
         </para>
+        
+        <programlisting language="c"><![CDATA[
+std::sscanf(yytext, "<pos %d %u %u", &m_id, &from, &to)
+
+}]]></programlisting> 
+<para>
+    Az inputbol kiiratjuk a megfelelő pozíciot amiket az m_id a from és a to referenciaértékéből kapunk meg,
+Az első decimalis ( %d)  a masik kettő( %u  %u) pedig unsigned éréket jelol
+</para>
+        
+        
     </section> 
 	    <section>
         <title>SamuCam</title>
@@ -51,8 +49,138 @@ https://github.com/nbatfai/SamuCam
             Megoldás forrása:                
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+            Samucam ! Tehat ahoz hogy ezzel tudjunk dolgozni telepítésekre van szükségünk.
+Telepítenunk kell a Qt-t , majd egy parancsot kiadni amely ezutan general szamunkra egy maket-et 
+hogy tudjuk futtatni a samucamot.
+A programunk futtatása egy specialis parancsal törtenik hisz ahoz hogy mukodjon a camunk . Peldaul
+ha IP kamerat akarunk hasznalni --ip kapcsolora van szükségünk.
+Nezzuk meg a kódot pontosabban a SamuCam.cppt . 
+A programban a videostream alltal megnyitja a streamet az eltarolt ipn kereszult .
+Ezutan lathatjuk hogy meg tudjuk adni a stream mereteit szelesseget , magassagat .
+Illetve be tudjuk az fpst is 10re.
+Ha a program sikeresen fut akkor minden egyes kepet eltarol majd ezek utan ezeken fogja keresni az arcokat.
+A talalt arcokat eltarolja és vegul ezekbol keszít el mindent.
         </para>
+        
+        <programlisting language="c"><![CDATA[
+
+
+#include "SamuCam.h"
+
+
+SamuCam::SamuCam ( std::string videoStream, int width = 176, int height = 144 )
+  : videoStream ( videoStream ), width ( width ), height ( height )
+{
+  openVideoStream();
+}
+
+SamuCam::~SamuCam ()
+
+{
+}
+
+void SamuCam::openVideoStream()
+
+{
+  videoCapture.open ( videoStream );
+
+
+  videoCapture.set ( CV_CAP_PROP_FRAME_WIDTH, width );
+  videoCapture.set ( CV_CAP_PROP_FRAME_HEIGHT, height );
+  videoCapture.set ( CV_CAP_PROP_FPS, 10 );
+
+}
+
+
+
+void SamuCam::run()
+
+{
+
+
+  cv::CascadeClassifier faceClassifier;
+  std::string faceXML = "lbpcascade_frontalface.xml"; // https://github.com/Itseez/opencv/tree/master/data/lbpcascades
+  if ( !faceClassifier.load ( faceXML ) )
+
+    {
+      qDebug() << "error: cannot found" << faceXML.c_str();
+      return;
+
+    }
+
+  cv::Mat frame;
+  while ( videoCapture.isOpened() )
+
+    {
+      QThread::msleep ( 50 );
+      while ( videoCapture.read ( frame ) )
+
+        {
+
+          if ( !frame.empty() )
+            {
+
+              cv::resize ( frame, frame, cv::Size ( 176, 144 ), 0, 0, cv::INTER_CUBIC );
+              std::vector<cv::Rect> faces;
+              cv::Mat grayFrame;
+
+              cv::cvtColor ( frame, grayFrame, cv::COLOR_BGR2GRAY );
+              cv::equalizeHist ( grayFrame, grayFrame );
+
+              faceClassifier.detectMultiScale ( grayFrame, faces, 1.1, 4, 0, cv::Size ( 60, 60 ) );
+
+              if ( faces.size() > 0 )
+                {
+
+                  cv::Mat onlyFace = frame ( faces[0] ).clone();
+
+                 QImage* face = new QImage ( onlyFace.data,
+                                              onlyFace.cols,
+                                              onlyFace.rows,
+                                              onlyFace.step,
+                                              QImage::Format_RGB888 );
+
+                  cv::Point x ( faces[0].x-1, faces[0].y-1 );
+                  cv::Point y ( faces[0].x + faces[0].width+2, faces[0].y + faces[0].height+2 );
+                  cv::rectangle ( frame, x, y, cv::Scalar ( 240, 230, 200 ) );
+
+                  emit  faceChanged ( face );
+                }
+              QImage*  webcam = new QImage ( frame.data,
+                                             frame.cols,
+                                             frame.rows,
+                                             frame.step,
+                                             QImage::Format_RGB888 );
+
+              emit  webcamChanged ( webcam );
+            }
+
+          QThread::msleep ( 80 );
+
+        }
+
+      if ( ! videoCapture.isOpened() )
+        {
+         openVideoStream();
+        }
+
+    }
+
+}]]></programlisting> 
+
+
+        <para>
+            <figure>
+            <title>  Forrás : Sajat kep </title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="buzi/samu.png" scale="70"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        </para>
+     
+        
     </section> 
 	    <section>
         <title>BrainB</title>
@@ -66,27 +194,223 @@ https://github.com/nbatfai/SamuCam
             Megoldás forrása:                
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+            TA BrainB nemmas mint egy Benchmark azaz egy mérés . Amely nem mast mint a kulonbozo jatekokat probalja 
+szimulalni és lemérni hogy mennyire vagyunk kepesek figyelni a karakterunkre egy tomegben . 
+Ez egy eleg gyakori dolog hisz egy MMORPGben vagy MOBAban , RTSben vagy egyéb ehez hasonló
+jatekokban gyakran előfordulhat hogy a spellek es a rengeteg karakter , esemény miatt elveszítjuk a 
+karakterünket és ezálltal előnytelen pozícióba kerülünk vagy eppen az ellenfelet nem talaljuk ...
+Szóval ezzel a programmal tudjuk mérni az egyeni fokuszáló képességünket. 10 percig kell
+a megfelelő négyzetet követnunk az egérrel . A feladatunk pontosan a Qt slot-signal mechanizmusanak bemutatása
+Maga a QT a slot-signal az objektumok kozotti kommunikaciért felel.
+Ez nem mas mint mikor valamit valtoztatunk az egyik objektumba ezzel a mechanizmussal
+jelezzuk a tobbi objektumnak. Több ilyen fukció is talalható ilyen peldaul az emit
+vagy eppen a connect
         </para>
-    </section> 
-	    <section>
-        <title>OSM térképre rajzolása</title>
+        
         <para>
-		Debrecen térképre dobjunk rá cuccokat, ennek mintájára, ahol én az országba helyeztem el a DEAC
-hekkereket: https://www.twitch.tv/videos/182262537 (de az OOCWC Java Swinges
-megjelenítőjéből: https://github.com/nbatfai/robocar-emulator/tree/master/justine/rcwin is
-kiindulhatsz, mondjuk az komplexebb, mert ott időfejlődés is van...)
+            ilyeneket talalhatunk tobb fajlban is
+peldaul a BrainBWin.cppben 
+connect ( brainBThread, SIGNAL ( heroesChanged ( QImage, int, int ) ),
+        </para>
+        <para>
+connect ( brainBThread, SIGNAL ( heroesChanged ( QImage, int, int ) ),
+        </para>
+     
+        <para>
+   vagy a brainBthread.cppben         
+        </para>
+        <para>
+emit heroesChanged ( dest, heroes[0].x, heroes[0].y )            
+        </para>
+        
+        
+<programlisting language="c"><![CDATA[
+        #include "BrainBWin.h"
 
+
+
+const QString BrainBWin::appName = "NEMESPOR BrainB Test";
+const QString BrainBWin::appVersion = "6.0.3";
+
+
+
+BrainBWin::BrainBWin ( int w, int h, QWidget *parent ) : QMainWindow ( parent )
+
+{
+
+
+//    setWindowTitle(appName + " " + appVersion);
+//    setFixedSize(QSize(w, h));
+
+
+        statDir = appName + " " + appVersion + " - " + QDate::currentDate().toString() + QString::number ( QDateTime::currentMSecsSinceEpoch() );
+
+        brainBThread = new BrainBThread ( w, h - yshift );
+        brainBThread->start();
+
+        connect ( brainBThread, SIGNAL ( heroesChanged ( QImage, int, int ) ),
+                  this, SLOT ( updateHeroes ( QImage, int, int ) ) );
+
+        connect ( brainBThread, SIGNAL ( endAndStats ( int ) ),
+                  this, SLOT ( endAndStats ( int ) ) );
+
+}
+
+void BrainBWin::endAndStats ( const int &t )
+
+{
+        qDebug()  << "\n\n\n";
+        qDebug()  << "Thank you for using " + appName;
+        qDebug()  << "The result can be found in the directory " + statDir;
+        qDebug()  << "\n\n\n";
+
+        save ( t );
+        close();
+
+}
+
+
+void BrainBWin::updateHeroes ( const QImage &image, const int &x, const int &y )
+{
+
+        if ( start && !brainBThread->get_paused() ) {
+
+                int dist = ( this->mouse_x - x ) * ( this->mouse_x - x ) + ( this->mouse_y - y ) * ( this->mouse_y - y );
+                if ( dist > 121 ) {
+
+                        ++nofLost;
+                        nofFound = 0;
+                        if ( nofLost > 12 ) {
+
+                                if ( state == found && firstLost ) {
+                                        found2lost.push_back ( brainBThread->get_bps() );
+                                }
+
+                                firstLost = true;
+
+                                state = lost;
+                                nofLost = 0;
+                                //qDebug() << "LOST";
+                                //double mean = brainBThread->meanLost();
+                                //qDebug() << mean;
+
+                                brainBThread->decComp();
+                        }
+                } else {
+                        ++nofFound;
+                       nofLost = 0;
+                        if ( nofFound > 12 ) {
+
+                                if ( state == lost && firstLost ) {
+                                        lost2found.push_back ( brainBThread->get_bps() );
+                                }
+
+                                state = found;
+                                nofFound = 0;
+                                //qDebug() << "FOUND";
+                                //double mean = brainBThread->meanFound();
+                                //qDebug() << mean;
+
+                                brainBThread->incComp();
+                        }
+
+                }
+
+
+        }
+        pixmap = QPixmap::fromImage ( image );
+        update();
+
+}
+
+void BrainBWin::paintEvent ( QPaintEvent * )
+
+{
+        if ( pixmap.isNull() ) {
+                return;
+
+        }
+
+        QPainter qpainter ( this );
+
+        xs = ( qpainter.device()->width() - pixmap.width() ) /2;
+        ys = ( qpainter.device()->height() - pixmap.height() +yshift ) /2;
+
+       qpainter.drawPixmap ( xs, ys, pixmap );
+
+        qpainter.drawText ( 10, 20, "Press and hold the mouse button on the center of Samu Entropy" );
+
+        int time = brainBThread->getT();
+        int min, sec;
+        millis2minsec ( time, min, sec );
+        QString timestr = QString::number ( min ) + ":" + QString::number ( sec ) + "/10:0";
+        qpainter.drawText ( 10, 40, timestr );
+
+
+        int bps = brainBThread->get_bps();
+        QString bpsstr = QString::number ( bps ) + " bps";
+        qpainter.drawText ( 110, 40, bpsstr );
+
+        if ( brainBThread->get_paused() ) {
+                QString pausedstr = "PAUSED (" + QString::number ( brainBThread->get_nofPaused() ) + ")";
+
+                qpainter.drawText ( 210, 40, pausedstr );
+        }
+           qpainter.end();
+}
+
+void BrainBWin::mousePressEvent ( QMouseEvent *event )
+{
+        brainBThread->set_paused ( false );
+}
+
+void BrainBWin::mouseReleaseEvent ( QMouseEvent *event )
+{
+
+        //brainBThread->set_paused(true);
+}
+
+void BrainBWin::mouseMoveEvent ( QMouseEvent *event )
+{
+
+        start = true;
+
+        mouse_x = event->pos().x() -xs - 60;
+        //mouse_y = event->pos().y() - yshift - 60;
+        mouse_y = event->pos().y() - ys - 60;
+}
+
+void BrainBWin::keyPressEvent ( QKeyEvent *event )
+
+{
+
+        if ( event->key() == Qt::Key_S ) {
+                save ( brainBThread->getT() );
+        } else if ( event->key() == Qt::Key_P ) {
+                brainBThread->pause();
+        } else if ( event->key() == Qt::Key_Q ||  event->key() == Qt::Key_Escape ) {
+                close();
+        }
+
+}
+
+BrainBWin::~BrainBWin()
+{
+
+}]]></programlisting> 
+        
+                <para>
+            <figure>
+            <title>  BrainB </title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="buzi/brain.png" scale="70"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
         </para>
-        <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:                
-        </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
+
+        
     </section> 
         
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         

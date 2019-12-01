@@ -20,42 +20,60 @@ https://youtu.be/DL6iQwPx1Yw (8:05-től)
             Megoldás forrása:                
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+Tehat a feladatunk a gengszterek rendezées lesz lambdával, nem mashol
+mint a robotautó vilagbajnokságban. Ahogy lathatjuk a programban 
+elsőként az adatok beolvasasa  ezt a  std:sscanf függvény végzi el szamunkra. maguik
+az  az adatok egy vektorba kerulnek. Nevszerint a gansters vektorba .
+Nyilvan a programban majd eztkell rendeznunk. Miutan megadtuk az elejet és a végét
+kezdődhet a rendezés a fentebb már említett lambda segítéségével. 
+A program kiszámolja a 2 gangster kozotti tavolsagot es ez lapajan rendezi oket.  
         </para>
+        
+
+<programlisting language="c"><![CDATA[
+
+struct SmartCar 
+   { 
+   int id; 
+   unsigned from; 
+   unsigned to; 
+   int step; 
+};
+    typedef SmartCar Gangster; 
+    std::vector<Gangster> gangsters ( boost::asio::ip::tcp::socket & socket,
+    int id, osmium::unsigned_object_id_type cop );
+
+}]]></programlisting>   
+
+
+<programlisting language="c"><![CDATA[
+
+   int idd {0}; 
+   unsigned f, t, s; 
+   int n {0}; 
+   int nn {0}; 
+   std::vector<Gangster> gangsters;
+
+}]]></programlisting>         
+        
+        
+<programlisting language="c"><![CDATA[
+
+  while ( std::sscanf ( data+nn, "<OK %d %u %u %u>%n", &idd, &f, &t, &s, &n 
+) == 4 ) 
+{
+nn += n; 
+gangsters.push_back ( Gangster {idd, f, t, s} );
+ } 
+std::sort ( gangsters.begin(), gangsters.end(), [this, cop] ( Gangster x, 
+ Gangster y ) 
+{
+ return dst ( cop, x.to ) < dst ( cop, y.to ); } 
+);
+
+}]]></programlisting>   
+        
     </section>        
-    <section>
-        <title>C++11 Custom Allocator</title>
-        <para>
-		https://prezi.com/jvvbytkwgsxj/high-level-programming-languages-2-c11-allocators/ a
-CustomAlloc-os példa, lásd C forrást az UDPROG repóban!
-
-        </para>
-        <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:                
-        </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
-    </section>      
-	    <section>
-        <title>STL map érték szerinti rendezése</title>
-        <para>
-		Például: https://github.com/nbatfai/future/blob/master/cs/F9F2/fenykard.cpp#L180
-
-        </para>
-        <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:                
-        </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
-    </section>      
 	    <section>
         <title>Alternatív Tabella rendezése</title>
         <para>
@@ -69,24 +87,152 @@ Interface Comparable T szerepét!
             Megoldás forrása:                
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+            Tehat a program elkezdése előtt erdemes frissíteni az adatokat hiszen fociról beszélunk ezen belul e csodas NB1ről
+ahol par ev alatt jópar csapat cserelődőtt illetve "stadion" sőt raadasul meg bajnokság letszama is megcsappant hisz 16ról 12csapatra esett a letszam 
+de sajnos a fujpest meg bent van... Szóval ha végeztünk a frissítéssel . 
+Fel kell töltenunk a kódban szereplő kereszttáblát. 1,2 ,3 0 értékekkel . Ezek
+a gyozelmet/vereseget/dontetlen jelentik megkulonboztetve az ideges es hazai palyat
+A csapatok rendezése a "Csapat" osztályban tortenik . Az ertekeket pedig a 
+compareto fuggveny rendezi illetve ez is hasonlítja ossze a csapatokat . Az osszehasonlítás
+során a fuggveny erteket ad vissza ez lehet -1 , 0 és 1 . Ez az ertek befolyasolja a sorrendben elfoglalt helyet.
+.
         </para>
+        
+<programlisting language="c"><![CDATA[
+         public static void main(String[] args) {
+int[][] kereszt = { 
+{ 0, 1, 1, 3, 1, 1, 2, 1, 1, 1, 2, 3 }, 
+{ 1, 0, 1, 1, 2, 1, 2, 2, 1, 1, 2, 3 }, 
+{ 1, 1, 0, 3, 1, 2, 2, 1, 2, 2, 3, 3 }, 
+{ 1, 2, 1, 0, 1, 1, 1, 1, 2, 1, 1, 2 }, 
+{ 3, 3, 2, 1, 0, 3, 3, 3, 3, 1, 2, 3 }, 
+{ 3, 1, 2, 3, 1, 0, 3, 1, 2, 1, 3, 2 }, 
+{ 3, 2, 1, 3, 1, 2, 0, 3, 1, 1, 2, 1 }, 
+{ 2, 3, 1, 3, 1, 3, 2, 0, 3, 1, 1, 3 }, 
+{ 2, 1, 3, 3, 2, 1, 1, 1, 0, 1, 2, 3 }, 
+{ 1, 3, 1, 1, 1, 2, 1, 3, 2, 0, 3, 1 }, 
+{ 2, 1, 1, 2, 1, 1, 2, 3, 2, 1, 0, 1 }, 
+{ 1, 2, 3, 1, 1, 1, 1, 3, 2, 3, 1, 0 } };
+
+    };
+
+    int[][] pontotSzerez = new int[kereszt.length][kereszt.length];
+
+    for (int i = 0; i < pontotSzerez.length; ++i) {
+      for (int j = 0; j < pontotSzerez[i].length; ++j) {
+        pontotSzerez[i][j] = 0;
+      }
+    }
+
+    for (int i = 0; i < pontotSzerez.length; ++i) {
+      for (int j = 0; j < pontotSzerez[i].length; ++j) {
+
+        if (kereszt[i][j] == 1) { // zφld
+
+          ++pontotSzerez[i][j];
+
+        } else if (kereszt[i][j] == 2) { // sαrga
+
+          ++pontotSzerez[i][j];
+          ++pontotSzerez[j][i];
+
+        } else if (kereszt[i][j] == 3) { // piros
+
+          ++pontotSzerez[j][i];
+
+        } else if (kereszt[i][j] == 0) { // όres
+
+          ;
+
+        } else {
+          System.out.println("Luke, zavart ιrzek az erυben...");
+        }
+
+      }
+    }
+ 
+    System.out.println("A x ontot-szerez y-tσl mαtrix");
+
+    nyom(pontotSzerez);
+
+    System.out.println("\nSor ιs oszlop φsszegekkel");
+
+    nyom2(pontotSzerez);
+
+    int oszlopOsszeg[] = new int[pontotSzerez.length];
+
+    for (int i = 0; i < pontotSzerez.length; ++i) {
+
+      int o = 0;
+      for (int j = 0; j < pontotSzerez[i].length; ++j) {
+        o += pontotSzerez[j][i];
+      }
+      oszlopOsszeg[i] = o;
+    }
+
+    System.out.println("\nA \"link\" mαtrix");
+
+    nyom3(pontotSzerez, oszlopOsszeg);
+
+  }
+
+  public static void nyom(int[][] k) {
+    for (int i = 0; i < k.length; ++i) {
+      System.out.println();
+      for (int j = 0; j < k[i].length; ++j) {
+        System.out.print(k[i][j] + ", ");
+      }
+    }
+  }
+
+  public static void nyom2(int[][] k) {
+
+    for (int i = 0; i < k.length; ++i) {
+      System.out.println();
+      int o = 0;
+      for (int j = 0; j < k[i].length; ++j) {
+        System.out.print(k[i][j] + ", ");
+        o += k[i][j];
+      }
+      System.out.print("  " + o);
+    }
+
+    System.out.println();
+    System.out.println();
+
+    for (int i = 0; i < k.length; ++i) {
+
+      int o = 0;
+      for (int j = 0; j < k[i].length; ++j) {
+        o += k[j][i];
+      }
+      System.out.print(o + " ");
+    }
+
+  }
+
+  public static void nyom3(int[][] k, int[] oszlopOsszeg) {
+    for (int i = 0; i < k.length; ++i) {
+      System.out.println();
+      System.out.print("{");
+      for (int j = 0; j < k[i].length; ++j) {
+
+        if (oszlopOsszeg[j] != 0.0) {
+          System.out.print(k[i][j] * (1.0 / oszlopOsszeg[j]) + ", ");
+        } else {
+          System.out.print(k[i][j] + ", ");
+        }
+
+      }
+      System.out.print("},");
+
+    }
+  }
+}
+}]]></programlisting>   
+
+        
     </section>          
-	<section>
-        <title>Prolog családfa</title>
-        <para>
-		Ágyazd be a Prolog családfa programot C++ vagy Java programba! Lásd para_prog_guide.pdf!
-        </para>
-        <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:                
-        </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
-    </section>      
 	    <section>
         <title>GIMP Scheme hack</title>
         <para>
@@ -100,8 +246,133 @@ dobozosat) akkor itt az alkalom!
             Megoldás forrása:                
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+          Tehat feladatunkban elsőkent a scriptet be kell masolnunk a GIMP script mappajaban. Mert enelkul nem fogja 
+erzekelni . Ha bemasoltuk lathatjuk hogy a kódban nagyon sok lehetőségünk van. Tehat kedvünkre alakíthatjuk a szöveget
+alakíthatjuk a magát a szöveget akár a színet színátmenetett illetve ugyanerre kepekesek vagyunk a hatterrel is.
+A kódban lathatjuk a dolgokat tehat h ebben az esetben a szövegunk feher színu lesz es fekete a hatter .
+Tovabba lathatjuk h rengeteg dolgot alakíthatunk tehat van lehetőség a szöveg elmosására es kulonboző efektek hasznalatara
+
         </para>
+        
+        
+<programlisting language="c"><![CDATA[
+
+(define (color-curve)
+    (let* (
+        (tomb (cons-array 8 'byte))
+    )
+        (aset tomb 0 0)
+        (aset tomb 1 0)
+        (aset tomb 2 50)
+        (aset tomb 3 190)
+        (aset tomb 4 110)
+        (aset tomb 5 20)
+        (aset tomb 6 200)
+        (aset tomb 7 190)
+    tomb)    
+)
+
+;(color-curve)
+
+(define (elem x lista)
+
+    (if (= x 1) (car lista) (elem (- x 1) ( cdr lista ) ) )
+
+)
+
+(define (text-wh text font fontsize)
+(let*
+    (
+        (text-width 1)
+        (text-height 1)
+    )
+ 
+    (set! text-width (car (gimp-text-get-extents-fontname text fontsize PIXELS font)))    
+    (set! text-height (elem 2  (gimp-text-get-extents-fontname text fontsize PIXELS font)))    
+    
+    (list text-width text-height)
+    )
+)
+
+;(text-width "alma" "Sans" 100)
+
+(define (script-fu-bhax-chrome text font fontsize width height color gradient)
+(let*
+    (
+        (image (car (gimp-image-new width height 0)))
+        (layer (car (gimp-layer-new image width height RGB-IMAGE "bg" 100 LAYER-MODE-NORMAL-LEGACY)))
+        (textfs)
+        (text-width (car (text-wh text font fontsize)))
+        (text-height (elem 2 (text-wh text font fontsize)))
+        (layer2)        
+    )
+    
+    ;step 1
+    (gimp-image-insert-layer image layer 0 0)
+    (gimp-context-set-foreground '(0 0 0))
+    (gimp-drawable-fill layer  FILL-FOREGROUND )
+    (gimp-context-set-foreground '(255 255 255))
+   
+    (set! textfs (car (gimp-text-layer-new image text font fontsize PIXELS)))
+    (gimp-image-insert-layer image textfs 0 0)   
+    (gimp-layer-set-offsets textfs (- (/ width 2) (/ text-width 2)) (- (/ height 2) (/ text-height 2)))
+   
+    (set! layer (car(gimp-image-merge-down image textfs CLIP-TO-BOTTOM-LAYER)))
+   
+    ;step 2   
+    (plug-in-gauss-iir RUN-INTERACTIVE image layer 15 TRUE TRUE)
+   
+    ;step 3
+    (gimp-drawable-levels layer HISTOGRAM-VALUE .11 .42 TRUE 1 0 1 TRUE)
+   
+    ;step 4   
+    (plug-in-gauss-iir RUN-INTERACTIVE image layer 2 TRUE TRUE)
+
+    ;step 5    
+    (gimp-image-select-color image CHANNEL-OP-REPLACE layer '(0 0 0))
+    (gimp-selection-invert image)
+
+    ;step 6        
+    (set! layer2 (car (gimp-layer-new image width height RGB-IMAGE "2" 100 LAYER-MODE-NORMAL-LEGACY)))
+    (gimp-image-insert-layer image layer2 0 0)
+
+    ;step 7        
+	(gimp-context-set-gradient gradient) 
+	(gimp-edit-blend layer2 BLEND-CUSTOM LAYER-MODE-NORMAL-LEGACY GRADIENT-LINEAR 100 0 REPEAT-NONE 
+        FALSE TRUE 5 .1 TRUE width (/ height 3) width  (- height (/ height 3)))
+    
+    ;step 8        
+    (plug-in-bump-map RUN-NONINTERACTIVE image layer2 layer 120 25 7 5 5 0 0 TRUE FALSE 2)
+   
+    ;step 9       
+    (gimp-curves-spline layer2 HISTOGRAM-VALUE 8 (color-curve))
+      
+    (gimp-display-new image)
+    (gimp-image-clean-all image)
+    )
+)
+
+;(script-fu-bhax-chrome "Bátf41 Haxor" "Sans" 120 1000 1000 '(255 0 0) "Crown molding")
+
+(script-fu-register "script-fu-bhax-chrome"
+    "Chrome3"
+    "Creates a chrome effect on a given text."
+    "Norbert Bátfai"
+    "Copyright 2019, Norbert Bátfai"
+    "January 19, 2019"
+    ""
+    SF-STRING       "Text"      "Bátf41 Haxor"
+    SF-FONT         "Font"      "Sans"
+    SF-ADJUSTMENT   "Font size" '(100 1 1000 1 10 0 1)
+    SF-VALUE        "Width"     "1000"
+    SF-VALUE        "Height"    "1000"
+    SF-COLOR        "Color"     '(255 0 0)
+    SF-GRADIENT     "Gradient"  "Crown molding"    
+)
+(script-fu-menu-register "script-fu-bhax-chrome" 
+    "<Image>/File/Create/BHAX"
+
+}]]></programlisting>   
     </section>      
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 </chapter>                
