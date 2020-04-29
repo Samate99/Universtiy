@@ -39,7 +39,7 @@ public class Main {
         for (int i = 0; i < db; i++)
             em.persist(randomPerson());
         em.getTransaction().commit();
-        System.out.println(em.find(Person.class, Long.valueOf(300)));
+        System.out.println(em.find(Person.class, (long)200));
         em.close();
         emf.close();
     }
