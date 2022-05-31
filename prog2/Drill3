@@ -1,0 +1,63 @@
+#include "std_lib_facilities.h"
+
+int main()
+{
+
+string friend_name;
+string first_name;
+int Age=0;
+char fsex = 0;
+
+cout << "Enter the name of the person you want to write to\n";
+cout << "Enter a second name you want to write to\n";
+cout << "Enter The age of the first person you want to write to\n";
+cout << "Enter The sex of the second person(m/f)\n";
+
+cin >> first_name;
+cin >> friend_name;
+cin >> Age;
+cin >> fsex;
+cout << "Dear"<< first_name <<"! \n";
+cout << "How are you?I miss you!\n";
+cout << "I am fine!\n";
+cout << "Do u remembember " << friend_name << " ? .Have you seen " << friend_name << " lately? \n";
+
+
+
+if (fsex == 'm')
+{
+cout << "If you see " << friend_name << " ask him to call me !."<< endl;
+}
+else if (fsex == 'f')
+{
+cout << "If you see " << friend_name << " ask her to call me !" << endl;
+}
+
+
+if (Age < 12)
+{
+cout << "I hear you just had a birthday you are " << Age << " old. Happy Birthday! !Next year you will be "<< Age+1 <<"years old  \n";
+
+}
+else if (Age == 17)
+{
+cout << "I hear you just had a birthday you are " << Age << " old. old.Happy Birthday! Next year you will be able to vote!  \n";
+}
+else if (Age > 70)
+{
+cout << "I hear you just had a birthday you are " << Age << " old.Happy Birthday! I hope you are enjoying retirement. \n";
+}
+else if (Age <= 0)
+{
+cout << "you're kidding!n\n";
+}
+else
+cout << "I hear you just had a birthday you are " << Age << " old. Happy Birthday!! \n";
+
+
+cout << "I am looking forward to hearing from u soon!\n";
+cout << "Yours sincerely\n";
+
+
+}
+
